@@ -1,109 +1,325 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Nicolas Lyfoung - Portfolio</title>
+    <meta name="description" content="Portfolio de Nicolas Lyfoung, étudiant en informatique passionné par le développement web et les nouvelles technologies.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern.css">
+    
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="content">
-
-        <div class="navbar">
-            <div>
-            <a href="index.html"><img src="img/accueil.png" class="accueil"></a>
-            <p><a href="https://www.linkedin.com/in/nicolas-lyfoung/" target="_blank" rel="noopener noreferrer">LinkedIn <img src="img/fleche.png"></a></p>
-            <p><a href="https://github.com/Nikholah" target="_blank" rel="noopener noreferrer">Github <img src="img/fleche.png"></a></p>
-            <p><a href="pdf/cv.pdf" target="_blank" rel="noopener noreferrer">CV <img src="img/fleche.png"></a></p>
-            </div>
-            <div>
-                <p><a href="contact.html">Contact</a></p>
-            </div>
-        </div>
-
-        <h2>Nicolas Lyfoung</h2>
-        <p>
-            Je suis étudiant en deuxième année d’IUT, passionné par l’informatique et tout ce qui touche au développement
-            et aux nouvelles technologies. J’aime particulièrement créer des applications tel que des sites ou des programmes d'automatisation,
-            comme celle que j’ai développée pour aider à la poursuite d’études.
-        </p>
-        <p>
-            Je suis quelqu’un de curieux ex:, autonome ex: et rigoureux ex:, j’aime comprendre comment les choses fonctionnent et
-            aller au bout de mes idées. Travailler sur des projets concrets me motive énormément, surtout quand
-            je peux mêler technique et logique.
-        </p>
-        <p>
-            En dehors de l’informatique, je suis quelqu’un de très actif et j’aime bouger. Je pratique le volley et le basket,
-            deux sports que j’apprécie autant pour l’esprit d’équipe que pour le côté stratégique et dynamique.
-            Ils m’aident à garder un bon équilibre entre travail et détente, tout en développant la cohésion et la réactivité.
-        </p>
-        <p>
-
-            À côté de ça, j'apprend aussi de la guitare depuis quelques mois. C’est un vrai moyen pour moi de me détendre, de me recentrer,
-            et d’exprimer ma créativité. J’aime apprendre de nouveaux morceaux, improviser un peu, ou simplement jouer pour le plaisir.
-        </p>
-
-        
-        <h2>Formations</h2>
-
-        <div class="formation">
-            <div class="etablissement">
-                <h4>Institut Universitaire Technolgique</h4>
-                <p>Actuellement en 2eme année informatique à Montpellier et membre du BDE</p>
-            </div>
-            <h4 class="annee">2023 - 2024</h4>
-        </div>
-
-        <div class="formation">
-            <div class="etablissement">
-                <h4>Lycée Jean Jaurès</h4>
-                <p>Je suis diplômé d’un bac général avec les spécialités mathématiques et NSI ayant eu la mention « assez bien »</p>
-            </div>
-            
-            <h4 class="annee">2020 - 2023</h4>
-        </div>
-
-        <h2>Projets</h2>
-        <div class="portfolio-items">
-
-            <div class="portfolio-item">
-                <a href="projet1.html">
-                    <h3>Jeu de Société | 2024</h3>
-                    <img src="img/train" alt="Projet 2">
-                    <p>Lors de ce projet, nous avons du recréer le jeu de société Train en Java et en créant l'interface grafique.</p>
-                </a>
-            </div>
-
-            <div class="portfolio-item">
-                <a href="projet2.html">
-                <h3>Code Game Jam | 2024</h3>
-                <img src="img/projet2.png" alt="Projet 2">
-                <p>Le concours "Code Game Jam", offre aux étudiants l’opportunité de créer un jeu vidéo en 30 heures autour d’un thème imposé.</p>
-            </a>
-            </div>
-
-            <div class="portfolio-item">
-                <a href="projet3.html">
-                <h3>Nuit de l'info | 2023</h3>
-                <img src="img/projet1.png" alt="Projet 1">
-                <p>La nuit de l'info est un concours permettant au étudiants de créer une application web en suivant un thème</p>
-            </a>
-            </div>
-
-            <div class="portfolio-item">
-                <a href="projet4.html">
-                    <h3>Stage chez Montpellier Management</h3>
-                    <img src="img/projet4.png" alt="Projet 4">
-                    <p>La nuit de l'info est un concours permettant au étudiants de créer une application web en suivant un thème</p>
-                </a>
-            </div>
-        </div>
-        
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
     </div>
 
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-brand">
+                <i class="fas fa-code"></i>
+                Nicolas L.
+            </a>
+            
+            <ul class="navbar-menu">
+                <li><a href="#about" class="navbar-link">À propos</a></li>
+                <li><a href="#education" class="navbar-link">Formation</a></li>
+                <li><a href="#projects" class="navbar-link">Projets</a></li>
+                <li><a href="#skills" class="navbar-link">Compétences</a></li>
+                <li><a href="contact.html" class="navbar-link">Contact</a></li>
+                <li>
+                    <a href="pdf/cv.pdf" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-download"></i> CV
+                    </a>
+                </li>
+            </ul>
+            
+            <button class="mobile-menu-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content animate-on-scroll">
+                <h1 class="hero-title" data-typed="Nicolas Lyfoung">Nicolas Lyfoung</h1>
+                <p class="hero-subtitle">Étudiant en informatique & Développeur passionné</p>
+                <p class="hero-description">
+                    Actuellement en 2ème année d'IUT Informatique, je suis passionné par le développement web, 
+                    les nouvelles technologies et la création d'applications innovantes.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-eye"></i> Voir mes projets
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i> Me contacter
+                    </a>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="social-links mt-lg">
+                    <a href="https://github.com/Nikholah" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nicolas-lyfoung/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">À propos de moi</h2>
+            
+            <div class="about-grid">
+                <div class="about-content animate-on-scroll">
+                    <div class="about-text">
+                        <p>
+                            Étudiant passionné en deuxième année d'IUT Informatique à Montpellier, 
+                            je suis fasciné par le développement et les nouvelles technologies. 
+                            J'aime particulièrement créer des applications web et des programmes d'automatisation 
+                            qui résolvent des problèmes concrets.
+                        </p>
+                        <p>
+                            Curieux, autonome et rigoureux, j'aime comprendre comment les choses fonctionnent 
+                            et aller au bout de mes idées. Travailler sur des projets concrets me motive énormément, 
+                            surtout quand je peux mêler technique et logique.
+                        </p>
+                        <p>
+                            En dehors de l'informatique, je suis très actif. Je pratique le volley et le basket, 
+                            deux sports qui développent l'esprit d'équipe et la stratégie. J'apprends également 
+                            la guitare depuis quelques mois, un excellent moyen d'exprimer ma créativité.
+                        </p>
+                    </div>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>2ème année IUT</h4>
+                            <p>Informatique à Montpellier</p>
+                        </div>
+                        <div class="highlight-card">
+                            <i class="fas fa-users"></i>
+                            <h4>Membre du BDE</h4>
+                            <p>Engagement associatif</p>
+                        </div>
+                        <div class="highlight-card">
+                            <i class="fas fa-code"></i>
+                            <h4>Développeur</h4>
+                            <p>Passionné de web</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section" style="background: var(--bg-primary);">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Formation</h2>
+            
+            <div class="timeline animate-on-scroll">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - Présent</div>
+                    <h3 class="timeline-title">DUT Informatique</h3>
+                    <p class="timeline-description">
+                        Institut Universitaire Technologique de Montpellier<br>
+                        Membre actif du Bureau des Étudiants (BDE)
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 - 2023</div>
+                    <h3 class="timeline-title">Baccalauréat Général</h3>
+                    <p class="timeline-description">
+                        Lycée Jean Jaurès<br>
+                        Spécialités : Mathématiques et NSI<br>
+                        Mention : Assez bien
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Mes Projets</h2>
+            
+            <div class="projects-grid">
+                <article class="project-card animate-on-scroll">
+                    <img src="img/train" alt="Jeu de société Train" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Jeu de Société Train</h3>
+                        <p class="project-description">
+                            Recréation du célèbre jeu de société en Java avec une interface graphique 
+                            intuitive développée en JavaFX/FXML.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">JavaFX</span>
+                            <span class="tech-tag">FXML</span>
+                        </div>
+                        <a href="projet1.html" class="btn btn-primary mt-md">
+                            Voir le projet <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card animate-on-scroll">
+                    <img src="img/projet2.png" alt="Code Game Jam" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Code Game Jam 2024</h3>
+                        <p class="project-description">
+                            Création d'un jeu vidéo en 30 heures lors d'un concours étudiant 
+                            autour d'un thème imposé.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Game Dev</span>
+                            <span class="tech-tag">Teamwork</span>
+                            <span class="tech-tag">30h Challenge</span>
+                        </div>
+                        <a href="projet2.html" class="btn btn-primary mt-md">
+                            Voir le projet <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card animate-on-scroll">
+                    <img src="img/projet1.png" alt="Nuit de l'info" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Nuit de l'Info 2023</h3>
+                        <p class="project-description">
+                            Développement d'une application web complète en une nuit 
+                            lors de ce concours national étudiant.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Web</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="projet3.html" class="btn btn-primary mt-md">
+                            Voir le projet <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card animate-on-scroll">
+                    <img src="img/projet4.png" alt="Stage Montpellier Management" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Stage - Montpellier Management</h3>
+                        <p class="project-description">
+                            Développement d'outils d'automatisation et amélioration 
+                            des processus internes de l'entreprise.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Automatisation</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Entreprise</span>
+                        </div>
+                        <a href="projet4.html" class="btn btn-primary mt-md">
+                            Voir le projet <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section" style="background: var(--bg-primary);">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Compétences</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="skill-name">Développement Web</h3>
+                    <p class="skill-level">HTML, CSS, JavaScript, React</p>
+                </div>
+                
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-icon">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <h3 class="skill-name">Programmation</h3>
+                    <p class="skill-level">Java, Python, C++</p>
+                </div>
+                
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="skill-name">Base de données</h3>
+                    <p class="skill-level">SQL, MongoDB, PostgreSQL</p>
+                </div>
+                
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-icon">
+                        <i class="fas fa-git-alt"></i>
+                    </div>
+                    <h3 class="skill-name">Outils & DevOps</h3>
+                    <p class="skill-level">Git, Docker, CI/CD</p>
+                </div>
+                
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="skill-name">Mobile</h3>
+                    <p class="skill-level">React Native, Flutter</p>
+                </div>
+                
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="skill-name">Soft Skills</h3>
+                    <p class="skill-level">Travail d'équipe, Communication</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Mon Portfolio</p>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Nicolas Lyfoung. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="https://github.com/Nikholah" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nicolas-lyfoung/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:contact@nicolaslyfoung.fr" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
 </body>
 </html>
