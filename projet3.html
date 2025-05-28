@@ -3,95 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Présentation du Projet</title>
-    <link rel="stylesheet" href="css/styleProjet.css">
-    
+    <title>Nuit de l'Info 2024 - Nicolas Lyfoung</title>
+    <meta name="description" content="Développement d'un site web sur le changement climatique lors de la Nuit de l'Info 2024.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern.css">
+    <link rel="stylesheet" href="css/project.css">
+
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-   
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <a href="index.html" class="navbar-brand">
+            <i class="fas fa-code"></i>
+            Nicolas L.
+        </a>
 
-    <div class="container">
-        <a href="index.html"><img src="img/accueil.png" class="accueil"></a>
-        <h1>Présentation du Projet : Nuit de l'info</h1>
-        <h2>Introduction</h2>
-        <p>Ce projet a été réalisé lors de la Nuit de l'Info 2024. Un site web a été développé dans le cadre de cet événement, avec pour thème : le changement climatique, une problématique soulevée par le GIEC (Groupe d'experts intergouvernemental sur l'évolution du climat).</p>
-    
-        <h2>Captures d'écran</h2>
-        <img src="img/projet1.png" alt="Capture d'écran du jeu de société Train" class="train">
-
-        <h2>Expérience personnelle</h2>
-        <p>Participer à la CodeGameJam2024 a été une aventure intense et enrichissante. Créer Shadow Of Memory m'a permis de développer mes compétences en : </p>
-        <ul>
+        <ul class="navbar-menu">
+            <li><a href="index.html#about" class="navbar-link">À propos</a></li>
+            <li><a href="index.html#education" class="navbar-link">Formation</a></li>
+            <li><a href="index.html#projects" class="navbar-link">Projets</a></li>
+            <li><a href="index.html#skills" class="navbar-link">Compétences</a></li>
+            <li><a href="contact.html" class="navbar-link">Contact</a></li>
             <li>
-            Travail en équipe : Collaborer efficacement avec des coéquipiers passionnés pour surmonter des défis techniques et créatifs.
-        </li>
-        <li>
-            Gestion du stress : Travailler sous la pression d'un temps limité tout en maintenant une vision claire du projet.
-        </li>
+                <a href="pdf/cv.pdf" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-download"></i> CV
+                </a>
+            </li>
         </ul>
 
-        <h2>Technologies utilisées</h2>
-        <ul>
-            <li>HTML</li>
-            <li>JavaScript</li>
-            <li>CSS</li>
-        </ul>
+        <button class="mobile-menu-toggle">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+    </div>
+</nav>
 
-        <a class="button" href="https://github.com/Nikholah/Nuit-de-linfo" target="_blank">Voir le projet sur GitHub</a>
-    
+<!-- Project Hero -->
+<section class="project-hero">
+    <div class="container">
+        <div class="project-hero-content animate-on-scroll">
+            <a href="index.html#projects" class="back-link">
+                <i class="fas fa-arrow-left"></i> Retour aux projets
+            </a>
 
-        <div class="ppp">
-            <div>
-                <h4>Compétence 1 : Réaliser un développement d’application</h4>
-                <ul>
-                    <li><strong>Conception et implémentation :</strong> Analyse des besoins pour un site web sur le thème du changement climatique et développement en HTML, CSS et JavaScript.</li>
-                    <li><strong>Interfaces utilisateurs :</strong> Création d’une interface engageante et intuitive, mettant l'accent sur l’accessibilité et l’esthétique.</li>
-                    <li><strong>Tests :</strong> Validation fonctionnelle pour s'assurer de la conformité des fonctionnalités clés.</li>
-                </ul>
+            <h1 class="project-hero-title">Nuit de l'Info 2024</h1>
+
+            <div class="project-meta">
+                    <span class="project-date">
+                        <i class="far fa-calendar"></i> 2024
+                    </span>
+                <span class="project-type">
+                        <i class="fas fa-globe"></i> Site web
+                    </span>
+                <span class="project-duration">
+                        <i class="far fa-clock"></i> Une nuit
+                    </span>
             </div>
-        
-            <div>
-                <h4>Compétence 2 : Optimiser des applications</h4>
-                <ul>
-                    <li><strong>Algorithmes :</strong> Simplification et optimisation des scripts JavaScript pour améliorer les performances du site web.</li>
-                    <li><strong>Performance :</strong> Réduction des temps de chargement grâce à un design léger et à une gestion efficace des ressources.</li>
-                </ul>
+
+            <p class="project-intro">
+                Développement d'un site web sensibilisant au changement climatique lors de la
+                Nuit de l'Info 2024. Un projet collaboratif basé sur les problématiques
+                soulevées par le GIEC (Groupe d'experts intergouvernemental sur l'évolution du climat).
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Project Content -->
+<section class="project-content-section">
+    <div class="container">
+        <div class="project-layout">
+            <!-- Main Content -->
+            <div class="project-main animate-on-scroll">
+                <!-- Gallery -->
+                <div class="project-gallery">
+                    <img src="img/projet1.png" alt="Capture d'écran du site Nuit de l'Info" class="project-screenshot">
+                </div>
+
+                <!-- Description -->
+                <div class="project-section">
+                    <h2>Vue d'ensemble</h2>
+                    <p>
+                        Ce projet a été réalisé lors de la Nuit de l'Info 2024, un événement national
+                        qui rassemble des étudiants en informatique autour d'un défi de développement
+                        web en une nuit. Le thème choisi était le changement climatique, une
+                        problématique cruciale soulevée par le GIEC.
+                    </p>
+                    <p>
+                        L'objectif était de créer un site web informatif et engageant pour sensibiliser
+                        le public aux enjeux environnementaux actuels, en utilisant les technologies
+                        web modernes et en respectant les bonnes pratiques de développement.
+                    </p>
+                </div>
+
+                <!-- Experience -->
+                <div class="project-section">
+                    <h2>Expérience personnelle</h2>
+                    <p>
+                        Participer à la Nuit de l'Info 2024 a été une expérience formatrice et stimulante.
+                        Ce projet m'a permis de développer mes compétences dans plusieurs domaines :
+                    </p>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-users"></i>
+                            Travail en équipe : Collaborer efficacement avec des coéquipiers
+                            pour créer un projet cohérent en temps limité
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            Gestion du stress : Maintenir la productivité et la créativité
+                            sous la pression temporelle d'une nuit de développement
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Features -->
+                <div class="project-section">
+                    <h2>Fonctionnalités principales</h2>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Interface responsive adaptée à tous les appareils
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Contenu interactif sur le changement climatique
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Visualisations de données climatiques
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Design accessible et ergonomique
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Optimisation des performances web
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Competencies -->
+                <div class="project-section">
+                    <h2>Compétences développées</h2>
+
+                    <div class="competency-grid">
+                        <div class="competency-card">
+                            <h3><i class="fas fa-code"></i> Réaliser un développement d'application</h3>
+                            <ul>
+                                <li>Analyse des besoins pour un site de sensibilisation</li>
+                                <li>Développement en HTML, CSS et JavaScript</li>
+                                <li>Création d'interfaces engageantes et accessibles</li>
+                                <li>Tests et validation fonctionnelle</li>
+                            </ul>
+                        </div>
+
+                        <div class="competency-card">
+                            <h3><i class="fas fa-tachometer-alt"></i> Optimiser des applications</h3>
+                            <ul>
+                                <li>Optimisation des scripts JavaScript</li>
+                                <li>Réduction des temps de chargement</li>
+                                <li>Design léger et gestion efficace des ressources</li>
+                            </ul>
+                        </div>
+
+                        <div class="competency-card">
+                            <h3><i class="fas fa-server"></i> Administrer des systèmes communicants</h3>
+                            <ul>
+                                <li>Configuration de l'environnement d'hébergement</li>
+                                <li>Utilisation de plateformes comme Replit</li>
+                                <li>Gestion de l'environnement web</li>
+                            </ul>
+                        </div>
+
+                        <div class="competency-card">
+                            <h3><i class="fas fa-database"></i> Gérer des données</h3>
+                            <ul>
+                                <li>Organisation du contenu climatique</li>
+                                <li>Mise en œuvre de bonnes pratiques de sécurité</li>
+                                <li>Affichage de statistiques pertinentes</li>
+                                <li>Respect des standards web</li>
+                            </ul>
+                        </div>
+
+                        <div class="competency-card">
+                            <h3><i class="fas fa-project-diagram"></i> Conduire un projet</h3>
+                            <ul>
+                                <li>Planification et définition des priorités</li>
+                                <li>Gestion des étapes clés en temps limité</li>
+                                <li>Documentation de l'architecture</li>
+                            </ul>
+                        </div>
+
+                        <div class="competency-card">
+                            <h3><i class="fas fa-users"></i> Collaborer au sein d'une équipe</h3>
+                            <ul>
+                                <li>Coordination et répartition des tâches</li>
+                                <li>Communication via Discord</li>
+                                <li>Prise de décisions collectives</li>
+                                <li>Gestion des conflits dans le respect des délais</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        
-            <div>
-                <h4>Compétence 3 : Administrer des systèmes informatiques communicants complexes</h4>
-                <p>Bien que le projet soit principalement orienté sur le développement, l'utilisation de la plateforme d'hébergement (Replit) a impliqué la configuration et la gestion d'un environnement web, une introduction aux aspects d'administration système.</p>
-            </div>
-        
-            <div>
-                <h4>Compétence 4 : Gérer des données</h4>
-                <ul>
-                    <li><strong>Gestion de contenu :</strong> Organisation des informations liées au changement climatique pour une présentation claire et structurée.</li>
-                    <li><strong>Sécurité :</strong> Mise en œuvre des bonnes pratiques pour protéger les données utilisateur, comme le respect des standards web.</li>
-                    <li><strong>Exploitation :</strong> Affichage de statistiques et d’informations pertinentes pour sensibiliser les utilisateurs.</li>
-                </ul>
-            </div>
-        
-            <div>
-                <h4>Compétence 5 : Conduire un projet</h4>
-                <ul>
-                    <li><strong>Planification :</strong> Définition des priorités et des étapes clés dans un délai limité.</li>
-                    <li><strong>Documentation :</strong> Rédaction d’un rapport décrivant les fonctionnalités du site et son architecture.</li>
-                </ul>
-            </div>
-        
-            <div>
-                <h4>Compétence 6 : Collaborer au sein d’une équipe</h4>
-                <ul>
-                    <li><strong>Coordination :</strong> Répartition des rôles et tâches entre les membres de l’équipe.</li>
-                    <li><strong>Communication :</strong> Utilisation d’outils comme Discord pour rester alignés sur l’avancement du projet.</li>
-                    <li><strong>Gestion des conflits :</strong> Prise de décisions collectives pour surmonter les désaccords dans le respect des délais.</li>
-                </ul>
+
+            <!-- Sidebar -->
+            <aside class="project-sidebar animate-on-scroll">
+                <!-- Tech Stack -->
+                <div class="sidebar-section">
+                    <h3>Technologies utilisées</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">CSS3</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">Replit</span>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="sidebar-section">
+                    <h3>Liens du projet</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/Nikholah/Nuit-de-linfo" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i>
+                            Code source sur GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event Info -->
+                <div class="sidebar-section">
+                    <h3>Événement</h3>
+                    <p class="team-info">
+                        Nuit de l'Info 2024 - Événement national de développement web
+                        en équipe sur le thème du changement climatique.
+                    </p>
+                </div>
+
+                <!-- Key Learnings -->
+                <div class="sidebar-section">
+                    <h3>Points clés</h3>
+                    <ul class="key-points">
+                        <li>Développement web responsif</li>
+                        <li>Sensibilisation environnementale</li>
+                        <li>Collaboration intensive</li>
+                        <li>Gestion de projet express</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<!-- Navigation Projects -->
+<section class="project-navigation">
+    <div class="container">
+        <div class="nav-projects">
+            <a href="projet2.html" class="nav-project prev">
+                <span class="nav-label">Projet précédent</span>
+                <span class="nav-title"><i class="fas fa-arrow-left"></i> Code Game Jam 2024</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; 2024 Nicolas Lyfoung. Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="https://github.com/Nikholah" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/nicolas-lyfoung/" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:contact@nicolaslyfoung.fr" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
         </div>
-        
-        
-        </div>
-        
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
 </body>
 </html>

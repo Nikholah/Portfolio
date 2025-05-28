@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (currentScroll <= 0) {
             navbar.classList.remove('scroll-up');
-            navbar.style.background = 'rgba(255, 255, 255, 0.8)';
+            // navbar.style.background = 'rgba(255, 255, 255, 0.8)';
         } else if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
             // Scroll down
             navbar.classList.remove('scroll-up');
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.remove('scroll-down');
             navbar.classList.add('scroll-up');
             navbar.style.transform = 'translateY(0)';
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            // navbar.style.background = 'rgba(255, 255, 255, 0.95)';
         }
         
         lastScroll = currentScroll;
