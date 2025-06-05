@@ -67,7 +67,7 @@
 
             <!-- Navigation Pills -->
             <div class="nav-pills">
-                <a href="#competence1" class="nav-pill">
+                <a href="#competence1" class="nav-pill active">
                     <i class="fas fa-laptop-code"></i> Réaliser un développement d'application
                 </a>
                 <a href="#competence2" class="nav-pill">
@@ -644,6 +644,13 @@
                 e.preventDefault();
                 const targetId = pill.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
+                
+                // Remove active class from all pills
+                document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+                
+                // Add active class to clicked pill
+                pill.classList.add('active');
+                
                 if (targetSection) {
                     targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
@@ -687,7 +694,7 @@
             scrollTimeout = setTimeout(() => {
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                if (scrollTop > lastScrollTop && scrollTop > 50) {
                     // Scrolling down & past 100px
                     backButton.style.opacity = '0';
                     backButton.style.transform = 'translateX(-100px)';
@@ -700,7 +707,7 @@
                 }
                 
                 lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-            }, 100);
+            }, 50);
         });
     </script>
 </body>
