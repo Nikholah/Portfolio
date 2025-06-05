@@ -4,67 +4,89 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static portfolio website for Nicolas Lyfoung, a second-year IUT computer science student. The site is built with vanilla HTML/CSS and showcases academic projects, skills, and personal information.
+This is a modern static portfolio website for Nicolas Lyfoung, a second-year IUT computer science student. The site features a professional design with animations, dark mode support, and interactive elements, built entirely with vanilla HTML/CSS/JavaScript.
 
 ## Project Structure
 
 ```
 Portfolio/
-├── index.html          # Main landing page with personal info, education, and project showcase
-├── contact.html        # Contact form page
-├── projet[1-4].html    # Individual project detail pages
+├── index.html                      # Main landing page with hero, projects, and skills
+├── contact.html                    # Contact form page
+├── portfolio-dapprentissage.html   # Learning portfolio/reflection page
+├── projet[1-4].html               # Individual project detail pages
 ├── css/
-│   ├── style.css       # Main stylesheet for common elements
-│   ├── styleContact.css # Contact page specific styles
-│   └── styleProjet.css  # Project pages specific styles
-├── img/                # Image assets for projects and UI elements
+│   ├── modern.css                 # Main modern stylesheet with all components
+│   ├── variables.css              # CSS custom properties (design tokens)
+│   ├── contact.css                # Contact page specific styles
+│   ├── project.css                # Project pages specific styles
+│   ├── portfolio-dapprentissage.css # Learning portfolio styles
+│   └── style.css                  # Legacy styles (older version)
+├── js/
+│   └── main.js                    # All JavaScript functionality
+├── img/                           # Project screenshots and UI assets
 └── pdf/
-    └── cv.pdf          # CV document
+    └── cv.pdf                     # Resume document
 ```
 
-## Key Architecture Points
+## Common Development Commands
 
-### Navigation Structure
-- All pages share a common navbar with:
-  - Home button (accueil.png icon)
-  - External links: LinkedIn, GitHub, CV (PDF)
-  - Internal link: Contact page
-- Project pages link back to home via the accueil.png icon
+### Local Development
+```bash
+# Python HTTP server
+python3 -m http.server 8000
 
-### Page Templates
-1. **index.html**: Contains personal description, education history, and project portfolio grid
-2. **contact.html**: Simple contact form using mailto method
-3. **projet[1-4].html**: Project detail pages following a consistent structure:
-   - Project description and technologies
-   - Screenshots
-   - Skills/competencies developed
-   - GitHub link when applicable
+# PHP built-in server
+php -S localhost:8000
 
-### Styling Approach
-- Separate CSS files for different page types
-- Common styles in style.css (navbar, general layout)
-- Page-specific styles in dedicated CSS files
-- Responsive design with max-width containers
+# Or simply open index.html in a browser
+```
 
-## Development Guidelines
+No build process is required - this is a static site that can be served directly.
 
-### When Modifying Content
-- Maintain consistent French language throughout
-- Keep the existing navbar structure on all pages
-- Follow the established project page template for new projects
+## High-Level Architecture
 
-### When Working with Styles
-- Common elements should be styled in style.css
-- Page-specific styles go in their respective CSS files
-- Maintain the existing visual hierarchy and spacing
+### Design System (variables.css)
+The site uses CSS custom properties for consistent theming:
+- **Colors**: Primary/secondary palettes, text colors, backgrounds
+- **Spacing**: Scale from xs (0.25rem) to 2xl (3rem)
+- **Typography**: Font sizes and line heights
+- **Effects**: Shadows, transitions, border-radius values
+- **Z-index**: Layering scale for modals, navbar, etc.
 
-### Adding New Projects
-1. Create a new `projetX.html` file following the existing template
-2. Add corresponding project image in img/ directory
-3. Update the portfolio grid in index.html with the new project card
-4. Link to the new project page from the portfolio item
+### Component Architecture (modern.css)
+Key reusable components:
+- **Buttons**: `.btn`, `.btn-primary`, `.btn-secondary`
+- **Cards**: `.card`, `.project-card` with hover effects
+- **Sections**: `.hero`, `.section`, `.navbar`
+- **Animations**: `.fade-in-up`, `.fade-in` with Intersection Observer
+- **Forms**: Styled inputs with validation states
 
-### Image Management
-- Project screenshots should be placed in img/ directory
-- Use descriptive filenames (e.g., projet5.png for project 5)
-- UI icons (accueil.png, fleche.png) are shared across pages
+### JavaScript Features (main.js)
+- **Dark Mode**: Theme switching with localStorage persistence
+- **Mobile Navigation**: Hamburger menu with smooth animations
+- **Scroll Effects**: 
+  - Navbar hide/show on scroll
+  - Fade-in animations using Intersection Observer
+  - Smooth scroll for anchor links
+- **Typed Effect**: Animated typing in hero section
+- **Form Validation**: Client-side validation for contact form
+- **Loading Animation**: Displays while page loads
+- **Toast Notifications**: For user feedback
+
+### Page-Specific Notes
+- **index.html**: Features hero section with typed animation, project grid, skills section
+- **contact.html**: Contact form using mailto: method with client-side validation
+- **projet[1-4].html**: Project detail pages with consistent layout
+- **portfolio-dapprentissage.html**: Academic reflection page with timeline layout
+
+### Responsive Design
+- Mobile-first approach with breakpoint at 768px
+- CSS Grid for project layouts
+- Flexbox for component layouts
+- Fluid typography using `clamp()`
+
+### Performance Considerations
+- No external dependencies (except Font Awesome CDN)
+- Lazy loading animations with Intersection Observer
+- Debounced scroll events
+- CSS transforms for smooth animations

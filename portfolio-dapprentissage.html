@@ -4,883 +4,704 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio d'Apprentissage - Nicolas Lyfoung</title>
-    <meta name="description" content="Portfolio d'apprentissage BUT Informatique - Justification des compétences de niveau 2">
-
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #3b82f6;
-            --background-color: #f8fafc;
-            --surface-color: #ffffff;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --border-color: #e2e8f0;
-            --success-color: #10b981;
-            --warning-color: #f59e0b;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--background-color);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* Header */
-        .header {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Navigation */
-        .nav-pills {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .nav-pill {
-            padding: 0.75rem 1.5rem;
-            background: var(--surface-color);
-            border: 2px solid var(--border-color);
-            border-radius: 50px;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .nav-pill:hover,
-        .nav-pill.active {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Main Content */
-        .main-content {
-            padding: 2rem 0;
-        }
-
-        /* Competency Cards */
-        .competency-section {
-            margin-bottom: 4rem;
-        }
-
-        .competency-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .competency-subtitle {
-            text-align: center;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
-        }
-
-        .competency-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .competency-card {
-            background: var(--surface-color);
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .competency-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
-
-        .ac-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .ac-icon {
-            width: 3rem;
-            height: 3rem;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .ac-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            line-height: 1.3;
-        }
-
-        .ce-badge {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-
-        .evidence-section {
-            margin-bottom: 2rem;
-        }
-
-        .evidence-title {
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .evidence-list {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .evidence-item {
-            background: var(--background-color);
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin-bottom: 0.5rem;
-            border-left: 4px solid var(--accent-color);
-        }
-
-        .evidence-item strong {
-            color: var(--primary-color);
-        }
-
-        .project-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
-        }
-
-        .argumentation {
-            background: linear-gradient(135deg, #667eea20, #764ba220);
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            border-left: 4px solid var(--primary-color);
-            margin-top: 1rem;
-        }
-
-        .argumentation-title {
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* Status indicators */
-        .mastery-badge {
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .mastery-acquired {
-            background: #dcfce7;
-            color: #166534;
-        }
-
-        .mastery-progress {
-            background: #fef3c7;
-            color: #92400e;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .competency-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-pills {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .container {
-                padding: 0 0.5rem;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Section spacing */
-        .section {
-            scroll-margin-top: 2rem;
-        }
-    </style>
+    <meta name="description" content="Portfolio d'apprentissage BUT Informatique - Parcours RACDV - Justification des compétences acquises">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern.css">
+    <link rel="stylesheet" href="css/portfolio-dapprentissage.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<!-- Header -->
-<header class="header">
-    <div class="container">
-        <h1>Portfolio d'Apprentissage</h1>
-        <p>Justification des compétences BUT Informatique - Niveau 2</p>
+    <!-- Loading animation -->
+    <div class="loading">
+        <div class="loading-spinner"></div>
     </div>
-</header>
 
-<!-- Navigation -->
-<nav class="container">
-    <div class="nav-pills">
-        <a href="#comp1" class="nav-pill">Réaliser un développement</a>
-        <a href="#comp2" class="nav-pill">Optimiser des applications</a>
-        <a href="#comp6" class="nav-pill">Collaborer en équipe</a>
-    </div>
-</nav>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <i class="fas fa-code"></i>
+                Nicolas L.
+            </a>
 
-<!-- Main Content -->
-<main class="main-content container">
+            <ul class="navbar-menu">
+                <li><a href="index.html#about" class="navbar-link">À propos</a></li>
+                <li><a href="index.html#education" class="navbar-link">Formation</a></li>
+                <li><a href="index.html#projects" class="navbar-link">Projets</a></li>
+                <li><a href="index.html#skills" class="navbar-link">Compétences</a></li>
+                <li><a href="contact.html" class="navbar-link">Contact</a></li>
+                <li>
+                    <a href="pdf/cv.pdf" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-download"></i> CV
+                    </a>
+                </li>
+            </ul>
 
-    <!-- Compétence 1 -->
-    <section id="comp1" class="competency-section section">
-        <h2 class="competency-title">Compétence 1 : Réaliser un développement d'application</h2>
-        <p class="competency-subtitle">Élaborer et implémenter des applications informatiques</p>
-
-        <div class="competency-grid">
-            <div class="competency-card">
-                <div class="ac-header">
-                    <div class="ac-icon">📋</div>
-                    <h3 class="ac-title">AC1.1 : Élaborer et implémenter les spécifications fonctionnelles et non fonctionnelles</h3>
+            <button class="mobile-menu-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-                <div class="ce-badge">CE : À partir des exigences</div>
+            </button>
+        </div>
+    </nav>
 
-                <div class="evidence-section">
-                    <h4 class="evidence-title">🔍 Traces d'activités</h4>
-                    <ul class="evidence-list">
-                        <li class="evidence-item">
-                            <strong>Jeu de Société Train :</strong> Analyse des règles du jeu original et conception de l'architecture MVC
-                            <br><a href="#" class="project-link">→ Voir les diagrammes UML et spécifications</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Stage Chaire Score :</strong> Analyse des besoins métier pour l'automatisation de l'analyse de conformité
-                            <br><a href="#" class="project-link">→ Voir le cahier des charges</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Nuit de l'Info 2024 :</strong> Définition des fonctionnalités de sensibilisation environnementale
-                            <br><a href="#" class="project-link">→ Voir les maquettes et spécifications</a>
-                        </li>
-                    </ul>
+    <!-- Main Content -->
+    <main class="portfolio-apprentissage">
+        <div class="container">
+            <!-- Back Button -->
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Retour au portfolio
+            </a>
+
+            <!-- Header -->
+            <div class="portfolio-header">
+                <h1>Portfolio d'Apprentissage</h1>
+                <p>BUT Informatique - Parcours RACDV (Réalisation d'Applications : Conception et Développement)</p>
+            </div>
+
+            <!-- Navigation Pills -->
+            <div class="nav-pills">
+                <a href="#competence1" class="nav-pill">
+                    <i class="fas fa-laptop-code"></i> Réaliser un développement d'application
+                </a>
+                <a href="#competence2" class="nav-pill">
+                    <i class="fas fa-bolt"></i> Optimiser des applications informatiques
+                </a>
+                <a href="#competence6" class="nav-pill">
+                    <i class="fas fa-users"></i> Collaborer au sein d'une équipe informatique
+                </a>
+            </div>
+
+            <!-- Compétence 1 -->
+            <div class="competency-section" id="competence1">
+                <div class="competency-header">
+                    <div class="competency-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="competency-content">
+                        <h2 class="competency-title">Réaliser un développement d'application</h2>
+                        <p class="competency-subtitle">Concevoir, coder, tester et intégrer une solution informatique pour un client</p>
+                    </div>
                 </div>
 
-                <div class="argumentation">
-                    <h4 class="argumentation-title">💭 Argumentation</h4>
-                    <p>
-                        J'ai développé cette compétence à travers plusieurs projets impliquant une analyse approfondie des besoins.
-                        Pour le jeu Train, j'ai dû comprendre et modéliser les règles complexes du jeu. Lors de mon stage, j'ai analysé
-                        les processus métier existants pour concevoir une solution d'automatisation. Je maîtrise maintenant la collecte
-                        d'exigences, leur formalisation et leur traduction en spécifications techniques.
-                    </p>
-                    <span class="mastery-badge mastery-acquired">Maîtrisé</span>
+                <!-- AC 1.1 -->
+                <div class="ac-section">
+                    <div class="ac-header">
+                        <h3 class="ac-title">AC 1.1 : Élaborer et implémenter les spécifications fonctionnelles et non fonctionnelles à partir des exigences</h3>
+                        <div class="ce-badge">
+                            <i class="fas fa-check-circle"></i>
+                            CE : En respectant les principes d'accessibilité et d'ergonomie
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h4 class="project-title">Jeu de Société Train - Analyse et spécifications</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-file-code"></i>
+                            Trace : Code source, documentation technique
+                        </div>
+                        <div class="evidence-description">
+                            J'ai travaillé cette compétence lors du développement du jeu Train en <strong>analysant minutieusement les règles du jeu original</strong> pour les transformer en spécifications techniques. J'ai élaboré l'architecture MVC, défini les interfaces utilisateur avec drag & drop, et spécifié les fonctionnalités (sauvegarde, multijoueur, tutoriel). Les spécifications non-fonctionnelles incluaient les performances, la fluidité des animations et l'ergonomie de l'interface JavaFX.
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h4 class="project-title">Stage Chaire Score - Application d'analyse IA</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-globe"></i>
+                            Trace : Application web, rapport de stage
+                        </div>
+                        <div class="evidence-description">
+                            Durant mon stage, j'ai <strong>analysé les besoins métier</strong> pour automatiser l'analyse de rapports financiers. J'ai spécifié une interface permettant de modifier les questions d'analyse, défini l'architecture FastAPI/LangChain, et implémenté des fonctionnalités d'archivage et d'historique. L'accessibilité était cruciale car l'application devait être utilisée par des chercheurs non-techniques.
+                        </div>
+                    </div>
+
+                    <div class="mastery-level">
+                        <div class="mastery-title">
+                            <i class="fas fa-star"></i>
+                            Niveau de maîtrise :
+                        </div>
+                        <div class="mastery-text">Je maîtrise cette compétence grâce à ma capacité à transformer des besoins complexes en spécifications techniques claires, démontrée sur des projets variés (jeu, application IA, sites web).</div>
+                    </div>
+                </div>
+
+                <!-- AC 1.2 -->
+                <div class="ac-section">
+                    <div class="ac-header">
+                        <h3 class="ac-title">AC 1.2 : Appliquer des principes d'accessibilité et d'ergonomie</h3>
+                        <div class="ce-badge">
+                            <i class="fas fa-check-circle"></i>
+                            CE : En adoptant de bonnes pratiques de conception et de programmation
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-globe-europe"></i>
+                            </div>
+                            <h4 class="project-title">Nuit de l'Info 2024 - Site web sur le climat</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-code"></i>
+                            Trace : Code HTML/CSS/JS, interface responsive
+                        </div>
+                        <div class="evidence-description">
+                            J'ai appliqué les principes d'accessibilité en créant une <strong>interface responsive adaptée à tous les appareils</strong>, en utilisant des contrastes appropriés pour la lisibilité, et en structurant le HTML de manière sémantique. L'ergonomie était centrale avec une navigation intuitive et des visualisations de données climatiques accessibles au grand public.
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h4 class="project-title">Jeu Train - Interface utilisateur intuitive</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-desktop"></i>
+                            Trace : Interface JavaFX, système de tutoriel
+                        </div>
+                        <div class="evidence-description">
+                            L'interface du jeu Train respectait les principes d'ergonomie avec un <strong>système de drag & drop intuitif</strong>, des animations fluides pour guider l'utilisateur, et un tutoriel interactif pour les nouveaux joueurs. J'ai veillé à l'accessibilité en utilisant des couleurs contrastées et des icônes explicites.
+                        </div>
+                    </div>
+
+                    <div class="mastery-level">
+                        <div class="mastery-title">
+                            <i class="fas fa-star"></i>
+                            Niveau de maîtrise :
+                        </div>
+                        <div class="mastery-text">Je maîtrise cette compétence en appliquant systématiquement les bonnes pratiques d'ergonomie et d'accessibilité dans mes développements, adaptées au public cible.</div>
+                    </div>
+                </div>
+
+                <!-- AC 1.3 -->
+                <div class="ac-section">
+                    <div class="ac-header">
+                        <h3 class="ac-title">AC 1.3 : Adopter de bonnes pratiques de conception et de programmation</h3>
+                        <div class="ce-badge">
+                            <i class="fas fa-check-circle"></i>
+                            CE : En veillant à la qualité du code et à la documentation
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <h4 class="project-title">Tous les projets - Architecture et versioning</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fab fa-git-alt"></i>
+                            Trace : Repositories Git, architecture MVC, documentation
+                        </div>
+                        <div class="evidence-description">
+                            J'applique constamment les bonnes pratiques : <strong>utilisation du pattern MVC</strong> dans le jeu Train, architecture FastAPI bien structurée pour l'application IA, gestion des versions avec Git sur tous les projets. Je documente mon code, utilise des noms de variables explicites, et structure mes projets de manière modulaire et maintenable.
+                        </div>
+                    </div>
+
+                    <div class="mastery-level">
+                        <div class="mastery-title">
+                            <i class="fas fa-star"></i>
+                            Niveau de maîtrise :
+                        </div>
+                        <div class="mastery-text">Cette compétence est acquise et appliquée systématiquement dans tous mes développements, avec une attention particulière à la lisibilité et la maintenabilité du code.</div>
+                    </div>
+                </div>
+
+                <!-- AC 1.4 -->
+                <div class="ac-section">
+                    <div class="ac-header">
+                        <h3 class="ac-title">AC 1.4 : Vérifier et valider la qualité de l'application par les tests</h3>
+                        <div class="ce-badge">
+                            <i class="fas fa-check-circle"></i>
+                            CE : En assurant un niveau de qualité logicielle
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h4 class="project-title">Jeu Train - Tests et validation</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-vial"></i>
+                            Trace : Tests JUnit, sessions de test en équipe
+                        </div>
+                        <div class="evidence-description">
+                            J'ai mis en place des <strong>tests unitaires avec JUnit</strong> pour valider la logique métier du jeu, testé les interactions utilisateur, et effectué des sessions de test en équipe pour identifier les bugs. Chaque fonctionnalité était testée avant intégration, garantissant la qualité et la stabilité de l'application.
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h4 class="project-title">Application IA - Tests et optimisation</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-tachometer-alt"></i>
+                            Trace : Tests de performance, validation des résultats IA
+                        </div>
+                        <div class="evidence-description">
+                            Durant mon stage, j'ai testé rigoureusement l'application d'analyse IA : validation des réponses du LLM, tests de performance sur de gros rapports, et vérification de la cohérence des résultats. J'ai également optimisé les requêtes pour améliorer les temps de réponse.
+                        </div>
+                    </div>
+
+                    <div class="mastery-level">
+                        <div class="mastery-title">
+                            <i class="fas fa-star"></i>
+                            Niveau de maîtrise :
+                        </div>
+                        <div class="mastery-text">Je maîtrise cette compétence en intégrant systématiquement les tests dans mon processus de développement, assurant ainsi la qualité et la fiabilité de mes applications.</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="competency-card">
-                <div class="ac-header">
-                    <div class="ac-icon">♿</div>
-                    <h3 class="ac-title">AC1.2 : Appliquer des principes d'accessibilité et d'ergonomie</h3>
-                </div>
-                <div class="ce-badge">CE : Interfaces utilisateur inclusives</div>
-
-                <div class="evidence-section">
-                    <h4 class="evidence-title">🔍 Traces d'activités</h4>
-                    <ul class="evidence-list">
-                        <li class="evidence-item">
-                            <strong>Portfolio web :</strong> Interface responsive avec navigation accessible et contrastes respectés
-                            <br><a href="#" class="project-link">→ Voir les tests d'accessibilité</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Jeu Train :</strong> Interface graphique intuitive avec drag & drop et tutoriel interactif
-                            <br><a href="#" class="project-link">→ Voir les tests utilisateur</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Nuit de l'Info :</strong> Design accessible pour la sensibilisation environnementale
-                            <br><a href="#" class="project-link">→ Voir l'audit d'accessibilité</a>
-                        </li>
-                    </ul>
+            <!-- Compétence 2 -->
+            <div class="competency-section" id="competence2">
+                <div class="competency-header">
+                    <div class="competency-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="competency-content">
+                        <h2 class="competency-title">Optimiser des applications informatiques</h2>
+                        <p class="competency-subtitle">Analyser et optimiser des applications pour assurer les performances attendues</p>
+                    </div>
                 </div>
 
-                <div class="argumentation">
-                    <h4 class="argumentation-title">💭 Argumentation</h4>
-                    <p>
-                        L'accessibilité est devenue une priorité dans tous mes projets web. J'applique systématiquement les
-                        règles WCAG : contrastes suffisants, navigation au clavier, textes alternatifs. Pour le jeu Train,
-                        j'ai créé une interface intuitive avec des retours visuels clairs. Je teste régulièrement mes
-                        interfaces avec des outils d'audit et des utilisateurs réels.
-                    </p>
-                    <span class="mastery-badge mastery-acquired">Maîtrisé</span>
+                <!-- AC 2.1 -->
+                <div class="ac-section">
+                    <div class="ac-header">
+                        <h3 class="ac-title">AC 2.1 : Choisir des structures de données complexes adaptées au problème</h3>
+                        <div class="ce-badge">
+                            <i class="fas fa-check-circle"></i>
+                            CE : En utilisant des techniques algorithmiques adaptées
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h4 class="project-title">Jeu Train - Structures de données optimisées</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-project-diagram"></i>
+                            Trace : Code Java, algorithmes de pathfinding
+                        </div>
+                        <div class="evidence-description">
+                            J'ai implémenté des <strong>structures de données complexes</strong> pour gérer l'état du jeu : graphes pour représenter les routes ferroviaires, algorithmes de pathfinding optimisés pour calculer les meilleurs trajets, et structures efficaces pour la gestion des tours de jeu. Ces choix ont permis d'optimiser les performances et la fluidité du gameplay.
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h4 class="project-title">Application IA - Optimisation des requêtes LLM</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-brain"></i>
+                            Trace : Code Python, architecture LangChain
+                        </div>
+                        <div class="evidence-description">
+                            Pour l'application d'analyse IA, j'ai optimisé la gestion des données en structurant efficacement les questions d'analyse, en implémentant un système de cache pour éviter les requêtes redondantes au LLM, et en organisant les données de façon à minimiser les temps de traitement des rapports volumineux.
+                        </div>
+                    </div>
+
+                    <div class="mastery-level">
+                        <div class="mastery-title">
+                            <i class="fas fa-star"></i>
+                            Niveau de maîtrise :
+                        </div>
+                        <div class="mastery-text">Je maîtrise cette compétence en sachant analyser les problèmes complexes et choisir les structures de données les plus adaptées pour optimiser les performances.</div>
+                    </div>
+                </div>
+
+                <!-- AC 2.2 -->
+                <div class="ac-section">
+                    <div class="ac-header">
+                        <h3 class="ac-title">AC 2.2 : Utiliser des techniques algorithmiques adaptées pour des problèmes complexes</h3>
+                        <div class="ce-badge">
+                            <i class="fas fa-check-circle"></i>
+                            CE : En évaluant l'impact environnemental et sociétal
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-dice"></i>
+                            </div>
+                            <h4 class="project-title">Code Game Jam - Optimisation temps réel</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-cube"></i>
+                            Trace : Code Unreal Engine, optimisations graphiques
+                        </div>
+                        <div class="evidence-description">
+                            Lors de la Game Jam, j'ai appliqué des <strong>techniques d'optimisation avancées</strong> sous Unreal Engine 5 : gestion efficace des ressources 3D, optimisation des rendus graphiques pour maintenir un framerate stable, et algorithmes de culling pour améliorer les performances. J'ai aussi considéré l'impact énergétique en optimisant la consommation GPU.
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h4 class="project-title">Nuit de l'Info - Optimisation web écologique</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-seedling"></i>
+                            Trace : Code JavaScript optimisé, performances web
+                        </div>
+                        <div class="evidence-description">
+                            Pour le site sur le climat, j'ai appliqué des principes d'éco-conception : <strong>optimisation du JavaScript</strong>, réduction des temps de chargement, compression des images, et design léger pour minimiser l'empreinte carbone. Cette approche était cohérente avec le message environnemental du projet.
+                        </div>
+                    </div>
+
+                    <div class="mastery-level">
+                        <div class="mastery-title">
+                            <i class="fas fa-star"></i>
+                            Niveau de maîtrise :
+                        </div>
+                        <div class="mastery-text">Je maîtrise cette compétence en intégrant les considérations de performance et d'impact environnemental dans mes choix algorithmiques et techniques.</div>
+                    </div>
+                </div>
+
+                <!-- AC 2.3 -->
+                <div class="ac-section">
+                    <div class="ac-header">
+                        <h3 class="ac-title">AC 2.3 : Comprendre les enjeux et moyens de sécurisation des données et du code</h3>
+                        <div class="ce-badge">
+                            <i class="fas fa-check-circle"></i>
+                            CE : En respectant les bonnes pratiques de sécurité
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4 class="project-title">Application IA - Sécurisation des données sensibles</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-lock"></i>
+                            Trace : Code sécurisé, gestion des API
+                        </div>
+                        <div class="evidence-description">
+                            J'ai implémenté des mesures de sécurité dans l'application d'analyse : <strong>sécurisation des appels API</strong> vers le LLM, protection des données de rapports financiers, validation des entrées utilisateur, et mise en place de bonnes pratiques pour éviter les failles de sécurité. La confidentialité des données était primordiale dans ce contexte professionnel.
+                        </div>
+                    </div>
+
+                    <div class="mastery-level">
+                        <div class="mastery-title">
+                            <i class="fas fa-star"></i>
+                            Niveau de maîtrise :
+                        </div>
+                        <div class="mastery-text">Je comprends les enjeux de sécurité et applique les bonnes pratiques, particulièrement dans le contexte d'applications manipulant des données sensibles.</div>
+                    </div>
+                </div>
+
+                <!-- AC 2.4 -->
+                <div class="ac-section">
+                    <div class="ac-header">
+                        <h3 class="ac-title">AC 2.4 : Évaluer l'impact environnemental et sociétal des solutions proposées</h3>
+                        <div class="ce-badge">
+                            <i class="fas fa-check-circle"></i>
+                            CE : En adoptant une démarche responsable
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h4 class="project-title">Nuit de l'Info - Projet à impact sociétal</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-hands-helping"></i>
+                            Trace : Site web de sensibilisation, approche éco-responsable
+                        </div>
+                        <div class="evidence-description">
+                            Le projet Nuit de l'Info avait un <strong>impact sociétal direct</strong> en sensibilisant au changement climatique. J'ai adopté une approche éco-responsable dans le développement : code optimisé pour réduire la consommation énergétique, hébergement écologique, et design minimaliste. L'objectif était de créer une solution cohérente avec le message environnemental.
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4 class="project-title">Application IA - Automatisation responsable</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-balance-scale"></i>
+                            Trace : Impact sur l'organisation, optimisation des ressources
+                        </div>
+                        <div class="evidence-description">
+                            L'application d'automatisation a eu un <strong>impact sociétal positif</strong> en libérant du temps de recherche pour des tâches à plus haute valeur ajoutée. J'ai optimisé l'utilisation des ressources IA pour minimiser la consommation énergétique tout en maximisant l'efficacité du processus d'analyse.
+                        </div>
+                    </div>
+
+                    <div class="mastery-level">
+                        <div class="mastery-title">
+                            <i class="fas fa-star"></i>
+                            Niveau de maîtrise :
+                        </div>
+                        <div class="mastery-text">Je maîtrise cette compétence en évaluant systématiquement l'impact de mes solutions et en adoptant une approche de développement responsable et durable.</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="competency-card">
-                <div class="ac-header">
-                    <div class="ac-icon">⚡</div>
-                    <h3 class="ac-title">AC1.3 : Adopter de bonnes pratiques de conception et de programmation</h3>
-                </div>
-                <div class="ce-badge">CE : Code maintenable et évolutif</div>
-
-                <div class="evidence-section">
-                    <h4 class="evidence-title">🔍 Traces d'activités</h4>
-                    <ul class="evidence-list">
-                        <li class="evidence-item">
-                            <strong>Tous projets :</strong> Utilisation systématique de Git avec commits atomiques et branches
-                            <br><a href="#" class="project-link">→ Voir les repositories GitHub</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Jeu Train :</strong> Architecture MVC, patterns de design, code commenté
-                            <br><a href="#" class="project-link">→ Voir le code source</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Stage :</strong> Architecture FastAPI/LangChain avec séparation des responsabilités
-                            <br><a href="#" class="project-link">→ Voir la documentation technique</a>
-                        </li>
-                    </ul>
+            <!-- Compétence 6 -->
+            <div class="competency-section" id="competence6">
+                <div class="competency-header">
+                    <div class="competency-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="competency-content">
+                        <h2 class="competency-title">Collaborer au sein d'une équipe informatique</h2>
+                        <p class="competency-subtitle">Acquérir, développer et exploiter les aptitudes nécessaires pour travailler efficacement dans une équipe informatique</p>
+                    </div>
                 </div>
 
-                <div class="argumentation">
-                    <h4 class="argumentation-title">💭 Argumentation</h4>
-                    <p>
-                        J'applique rigoureusement les bonnes pratiques : nommage cohérent, séparation des responsabilités,
-                        documentation du code. Le pattern MVC utilisé dans le jeu Train illustre ma compréhension des
-                        architectures logicielles. Mon utilisation de Git avec des commits atomiques et des branches
-                        démontre ma maîtrise des outils de versioning collaboratif.
-                    </p>
-                    <span class="mastery-badge mastery-acquired">Maîtrisé</span>
-                </div>
-            </div>
+                <!-- AC 6.1 -->
+                <div class="ac-section">
+                    <div class="ac-header">
+                        <h3 class="ac-title">AC 6.1 : Comprendre la diversité, la structure et la dimension de l'informatique dans une organisation</h3>
+                        <div class="ce-badge">
+                            <i class="fas fa-check-circle"></i>
+                            CE : En s'adaptant aux différents contextes organisationnels
+                        </div>
+                    </div>
 
-            <div class="competency-card">
-                <div class="ac-header">
-                    <div class="ac-icon">🧪</div>
-                    <h3 class="ac-title">AC1.4 : Vérifier et valider la qualité de l'application par les tests</h3>
-                </div>
-                <div class="ce-badge">CE : Stratégies de test complètes</div>
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h4 class="project-title">Stage Chaire Score - Intégration en milieu de recherche</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-file-alt"></i>
+                            Trace : Rapport de stage, collaboration avec différents acteurs
+                        </div>
+                        <div class="evidence-description">
+                            Durant mon stage, j'ai découvert <strong>l'écosystème de la recherche universitaire</strong> : collaboration avec la Chaire Score, l'ISDM pour l'accès aux modèles IA, et les utilisateurs finaux chercheurs. J'ai compris les enjeux spécifiques de l'informatique en contexte académique : besoins de documentation rigoureuse, importance de la reproductibilité, et contraintes budgétaires différentes du secteur privé.
+                        </div>
+                    </div>
 
-                <div class="evidence-section">
-                    <h4 class="evidence-title">🔍 Traces d'activités</h4>
-                    <ul class="evidence-list">
-                        <li class="evidence-item">
-                            <strong>Jeu Train :</strong> Tests unitaires avec JUnit pour la logique métier
-                            <br><a href="#" class="project-link">→ Voir les classes de test</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Stage :</strong> Tests d'intégration pour l'API et validation des résultats IA
-                            <br><a href="#" class="project-link">→ Voir les rapports de test</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>GameJam :</strong> Tests multi-postes en temps réel sous Unreal Engine
-                            <br><a href="#" class="project-link">→ Voir les sessions de test</a>
-                        </li>
-                    </ul>
+                    <div class="mastery-level">
+                        <div class="mastery-title">
+                            <i class="fas fa-star"></i>
+                            Niveau de maîtrise :
+                        </div>
+                        <div class="mastery-text">Je comprends la diversité des contextes informatiques et sais m'adapter aux spécificités organisationnelles, comme démontré lors de mon stage en milieu académique.</div>
+                    </div>
                 </div>
 
-                <div class="argumentation">
-                    <h4 class="argumentation-title">💭 Argumentation</h4>
-                    <p>
-                        J'ai intégré les tests comme partie intégrante du développement. Pour le projet Train, j'ai créé
-                        une suite de tests unitaires couvrant la logique métier critique. Lors de mon stage, j'ai mis en place
-                        des tests d'intégration pour valider les interactions avec l'API IA. Je comprends l'importance des tests
-                        pour garantir la fiabilité et faciliter la maintenance.
-                    </p>
-                    <span class="mastery-badge mastery-progress">En progression</span>
+                <!-- AC 6.2 -->
+                <div class="ac-section">
+                    <div class="ac-header">
+                        <h3 class="ac-title">AC 6.2 : Appliquer une démarche pour intégrer une équipe informatique au sein d'une organisation</h3>
+                        <div class="ce-badge">
+                            <i class="fas fa-check-circle"></i>
+                            CE : En adoptant les codes et pratiques de l'équipe
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h4 class="project-title">Stage - Intégration et adaptation</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-user-friends"></i>
+                            Trace : Processus d'intégration, adaptation aux pratiques
+                        </div>
+                        <div class="evidence-description">
+                            Je me suis rapidement intégré à l'équipe de recherche en <strong>adoptant leurs méthodes de travail</strong> : participation aux réunions de suivi, utilisation de leurs outils de communication, respect des processus de validation, et adaptation au rythme de travail académique. J'ai aussi appris leurs standards de documentation et de présentation des résultats.
+                        </div>
+                    </div>
+
+                    <div class="mastery-level">
+                        <div class="mastery-title">
+                            <i class="fas fa-star"></i>
+                            Niveau de maîtrise :
+                        </div>
+                        <div class="mastery-text">Je maîtrise les techniques d'intégration dans une équipe en observant, comprenant et adoptant rapidement les codes et pratiques établies.</div>
+                    </div>
+                </div>
+
+                <!-- AC 6.3 -->
+                <div class="ac-section">
+                    <div class="ac-header">
+                        <h3 class="ac-title">AC 6.3 : Mobiliser les compétences interpersonnelles pour intégrer une équipe informatique</h3>
+                        <div class="ce-badge">
+                            <i class="fas fa-check-circle"></i>
+                            CE : En développant son intelligence émotionnelle et sociale
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h4 class="project-title">Projets d'équipe - Communication et collaboration</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-users-cog"></i>
+                            Trace : Travail en équipe sur Train, Game Jam, Nuit de l'Info
+                        </div>
+                        <div class="evidence-description">
+                            J'ai développé mes <strong>compétences interpersonnelles</strong> à travers plusieurs projets d'équipe : coordination efficace lors de la Game Jam sous pression temporelle, résolution de conflits techniques dans l'équipe du jeu Train, et communication via Discord pour maintenir la cohésion. J'ai appris à écouter, négocier et m'adapter aux différentes personnalités de mes coéquipiers.
+                        </div>
+                    </div>
+
+                    <div class="mastery-level">
+                        <div class="mastery-title">
+                            <i class="fas fa-star"></i>
+                            Niveau de maîtrise :
+                        </div>
+                        <div class="mastery-text">Je maîtrise les compétences interpersonnelles nécessaires au travail d'équipe, démontrées dans des contextes variés et parfois stressants.</div>
+                    </div>
+                </div>
+
+                <!-- AC 6.4 -->
+                <div class="ac-section">
+                    <div class="ac-header">
+                        <h3 class="ac-title">AC 6.4 : Rendre compte de son activité professionnelle</h3>
+                        <div class="ce-badge">
+                            <i class="fas fa-check-circle"></i>
+                            CE : En communiquant efficacement sur ses réalisations
+                        </div>
+                    </div>
+
+                    <div class="evidence-card">
+                        <div class="evidence-header">
+                            <div class="project-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h4 class="project-title">Stage - Reporting et communication</h4>
+                        </div>
+                        <div class="evidence-type">
+                            <i class="fas fa-presentation"></i>
+                            Trace : Rapports d'avancement, présentation des résultats
+                        </div>
+                        <div class="evidence-description">
+                            Durant mon stage, j'ai développé mes capacités de <strong>reporting professionnel</strong> : rédaction de rapports d'avancement hebdomadaires, présentation des résultats aux chercheurs, documentation technique de l'application, et communication régulière avec mon tuteur. J'ai appris à adapter mon discours selon l'audience et à mettre en valeur les aspects importants de mon travail.
+                        </div>
+                    </div>
+
+                    <div class="mastery-level">
+                        <div class="mastery-title">
+                            <i class="fas fa-star"></i>
+                            Niveau de maîtrise :
+                        </div>
+                        <div class="mastery-text">Je maîtrise la communication professionnelle, sachant rendre compte de mes activités de manière claire et adaptée à mon audience.</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Compétence 2 -->
-    <section id="comp2" class="competency-section section">
-        <h2 class="competency-title">Compétence 2 : Optimiser des applications informatiques</h2>
-        <p class="competency-subtitle">Appliquer des techniques d'optimisation et d'algorithmes avancés</p>
-
-        <div class="competency-grid">
-            <div class="competency-card">
-                <div class="ac-header">
-                    <div class="ac-icon">🏗️</div>
-                    <h3 class="ac-title">AC2.1 : Choisir des structures de données complexes adaptées au problème</h3>
-                </div>
-                <div class="ce-badge">CE : Structures de données optimales</div>
-
-                <div class="evidence-section">
-                    <h4 class="evidence-title">🔍 Traces d'activités</h4>
-                    <ul class="evidence-list">
-                        <li class="evidence-item">
-                            <strong>Jeu Train :</strong> Graphes pour représenter les connexions ferroviaires, arbres pour l'IA
-                            <br><a href="#" class="project-link">→ Voir l'implémentation des structures</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Stage :</strong> Structures de données pour l'optimisation des requêtes LLM
-                            <br><a href="#" class="project-link">→ Voir l'architecture de données</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>GameJam :</strong> Optimisation des collections d'objets 3D sous Unreal Engine
-                            <br><a href="#" class="project-link">→ Voir les blueprints d'optimisation</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="argumentation">
-                    <h4 class="argumentation-title">💭 Argumentation</h4>
-                    <p>
-                        J'ai appris à choisir les structures de données en fonction des besoins de performance. Pour le jeu Train,
-                        l'utilisation de graphes pour modéliser le réseau ferroviaire était essentielle pour les algorithmes de
-                        pathfinding. Lors de mon stage, j'ai optimisé les structures de données pour minimiser les appels API
-                        et améliorer les temps de réponse.
-                    </p>
-                    <span class="mastery-badge mastery-acquired">Maîtrisé</span>
-                </div>
-            </div>
-
-            <div class="competency-card">
-                <div class="ac-header">
-                    <div class="ac-icon">🧠</div>
-                    <h3 class="ac-title">AC2.2 : Utiliser des techniques algorithmiques adaptées pour des problèmes complexes</h3>
-                </div>
-                <div class="ce-badge">CE : Algorithmes avancés (IA, optimisation)</div>
-
-                <div class="evidence-section">
-                    <h4 class="evidence-title">🔍 Traces d'activités</h4>
-                    <ul class="evidence-list">
-                        <li class="evidence-item">
-                            <strong>Jeu Train :</strong> Algorithmes de pathfinding (A*) pour les trajets optimaux
-                            <br><a href="#" class="project-link">→ Voir l'implémentation A*</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Stage :</strong> Intégration d'algorithmes d'IA avec LangChain pour l'analyse automatisée
-                            <br><a href="#" class="project-link">→ Voir l'architecture IA</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>GameJam :</strong> Algorithmes d'optimisation de rendu en temps réel
-                            <br><a href="#" class="project-link">→ Voir les optimisations Unreal</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="argumentation">
-                    <h4 class="argumentation-title">💭 Argumentation</h4>
-                    <p>
-                        Mon stage m'a particulièrement formé aux algorithmes d'IA appliqués. L'intégration de LangChain pour
-                        automatiser l'analyse de documents complexes m'a fait découvrir les techniques modernes de traitement
-                        du langage naturel. Pour le jeu Train, j'ai implémenté des algorithmes de pathfinding optimisés pour
-                        garantir des performances fluides.
-                    </p>
-                    <span class="mastery-badge mastery-acquired">Maîtrisé</span>
-                </div>
-            </div>
-
-            <div class="competency-card">
-                <div class="ac-header">
-                    <div class="ac-icon">🔒</div>
-                    <h3 class="ac-title">AC2.3 : Comprendre les enjeux et moyens de sécurisation des données et du code</h3>
-                </div>
-                <div class="ce-badge">CE : Sécurité applicative</div>
-
-                <div class="evidence-section">
-                    <h4 class="evidence-title">🔍 Traces d'activités</h4>
-                    <ul class="evidence-list">
-                        <li class="evidence-item">
-                            <strong>Stage :</strong> Sécurisation des API et gestion des clés d'accès pour l'IA
-                            <br><a href="#" class="project-link">→ Voir la configuration sécurisée</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Jeu Train :</strong> Validation des entrées utilisateur et prévention des exploits
-                            <br><a href="#" class="project-link">→ Voir les contrôles de sécurité</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Portfolio :</strong> HTTPS, protection contre les injections, headers de sécurité
-                            <br><a href="#" class="project-link">→ Voir l'audit de sécurité</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="argumentation">
-                    <h4 class="argumentation-title">💭 Argumentation</h4>
-                    <p>
-                        La sécurité est devenue une préoccupation constante dans mes développements. Lors de mon stage, j'ai
-                        appris à sécuriser les APIs et à gérer les authentifications pour les services d'IA. Je valide
-                        systématiquement les données d'entrée et j'applique les principes de moindre privilège. Je comprends
-                        les vulnérabilités courantes (OWASP Top 10) et leurs contre-mesures.
-                    </p>
-                    <span class="mastery-badge mastery-progress">En progression</span>
-                </div>
-            </div>
-
-            <div class="competency-card">
-                <div class="ac-header">
-                    <div class="ac-icon">🌱</div>
-                    <h3 class="ac-title">AC2.4 : Évaluer l'impact environnemental et sociétal des solutions proposées</h3>
-                </div>
-                <div class="ce-badge">CE : Développement responsable</div>
-
-                <div class="evidence-section">
-                    <h4 class="evidence-title">🔍 Traces d'activités</h4>
-                    <ul class="evidence-list">
-                        <li class="evidence-item">
-                            <strong>Nuit de l'Info :</strong> Projet dédié à la sensibilisation environnementale (GIEC)
-                            <br><a href="#" class="project-link">→ Voir le projet de sensibilisation</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Stage :</strong> Optimisation énergétique des requêtes IA pour réduire l'empreinte carbone
-                            <br><a href="#" class="project-link">→ Voir l'analyse d'impact</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>GameJam :</strong> Gestion efficace des ressources et optimisation des performances
-                            <br><a href="#" class="project-link">→ Voir les optimisations</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="argumentation">
-                    <h4 class="argumentation-title">💭 Argumentation</h4>
-                    <p>
-                        La Nuit de l'Info m'a sensibilisé aux enjeux environnementaux du numérique. J'ai pris conscience de
-                        l'impact des algorithmes d'IA et j'optimise désormais mes requêtes pour réduire la consommation
-                        énergétique. Je privilégie les solutions efficaces et j'évalue l'impact sociétal de mes
-                        développements, notamment en termes d'accessibilité et d'utilité sociale.
-                    </p>
-                    <span class="mastery-badge mastery-progress">En progression</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Compétence 6 -->
-    <section id="comp6" class="competency-section section">
-        <h2 class="competency-title">Compétence 6 : Collaborer au sein d'une équipe informatique</h2>
-        <p class="competency-subtitle">Intégrer une équipe et adopter les bonnes pratiques collaboratives</p>
-
-        <div class="competency-grid">
-            <div class="competency-card">
-                <div class="ac-header">
-                    <div class="ac-icon">🏢</div>
-                    <h3 class="ac-title">AC6.1 : Comprendre la diversité, la structure et la dimension de l'informatique dans une organisation</h3>
-                </div>
-                <div class="ce-badge">CE : Environnement professionnel (ESN, DSI...)</div>
-
-                <div class="evidence-section">
-                    <h4 class="evidence-title">🔍 Traces d'activités</h4>
-                    <ul class="evidence-list">
-                        <li class="evidence-item">
-                            <strong>Stage Chaire Score :</strong> Immersion dans un environnement de recherche universitaire
-                            <br><a href="#" class="project-link">→ Voir le rapport de stage</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Projets étudiants :</strong> Compréhension des différents rôles (dev, chef de projet, testeur)
-                            <br><a href="#" class="project-link">→ Voir les organigrammes projets</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Veille technologique :</strong> Suivi des évolutions du secteur IT et des métiers émergents
-                            <br><a href="#" class="project-link">→ Voir la synthèse de veille</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="argumentation">
-                    <h4 class="argumentation-title">💭 Argumentation</h4>
-                    <p>
-                        Mon stage à la Chaire Score m'a fait découvrir l'environnement de la recherche appliquée, différent
-                        du monde de l'entreprise classique. J'ai compris l'importance de la collaboration interdisciplinaire
-                        entre informaticiens et experts métier. Je connais maintenant les différents types d'organisations
-                        IT (ESN, DSI interne, startups) et leurs spécificités organisationnelles.
-                    </p>
-                    <span class="mastery-badge mastery-acquired">Maîtrisé</span>
-                </div>
-            </div>
-
-            <div class="competency-card">
-                <div class="ac-header">
-                    <div class="ac-icon">🎯</div>
-                    <h3 class="ac-title">AC6.2 : Appliquer une démarche pour intégrer une équipe informatique au sein d'une organisation</h3>
-                </div>
-                <div class="ce-badge">CE : Intégration professionnelle</div>
-
-                <div class="evidence-section">
-                    <h4 class="evidence-title">🔍 Traces d'activités</h4>
-                    <ul class="evidence-list">
-                        <li class="evidence-item">
-                            <strong>Stage :</strong> Intégration rapide dans l'équipe, adaptation aux outils et processus existants
-                            <br><a href="#" class="project-link">→ Voir l'évaluation du maître de stage</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Nuit de l'Info :</strong> Formation d'équipe spontanée et collaboration efficace en 24h
-                            <br><a href="#" class="project-link">→ Voir le retour d'expérience équipe</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>GameJam :</strong> Adaptation rapide à une équipe pluridisciplinaire (dev, design, son)
-                            <br><a href="#" class="project-link">→ Voir la documentation de collaboration</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="argumentation">
-                    <h4 class="argumentation-title">💭 Argumentation</h4>
-                    <p>
-                        J'ai développé ma capacité d'adaptation à travers diverses expériences d'équipe. En stage, j'ai su
-                        m'intégrer rapidement en prenant des initiatives, en posant les bonnes questions et en m'adaptant
-                        aux outils existants. Les événements courts comme la Nuit de l'Info m'ont appris à créer rapidement
-                        des liens de collaboration efficaces avec des inconnus.
-                    </p>
-                    <span class="mastery-badge mastery-acquired">Maîtrisé</span>
-                </div>
-            </div>
-
-            <div class="competency-card">
-                <div class="ac-header">
-                    <div class="ac-icon">🤝</div>
-                    <h3 class="ac-title">AC6.3 : Mobiliser les compétences interpersonnelles pour intégrer une équipe informatique</h3>
-                </div>
-                <div class="ce-badge">CE : Soft skills et communication</div>
-
-                <div class="evidence-section">
-                    <h4 class="evidence-title">🔍 Traces d'activités</h4>
-                    <ul class="evidence-list">
-                        <li class="evidence-item">
-                            <strong>Tous projets :</strong> Communication régulière via Discord, partage d'écran, pair programming
-                            <br><a href="#" class="project-link">→ Voir les logs de communication</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Jeu Train :</strong> Coordination équipe de 4 personnes, répartition des tâches
-                            <br><a href="#" class="project-link">→ Voir le planning collaboratif</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Stage :</strong> Collaboration avec chercheurs non-informaticiens, vulgarisation technique
-                            <br><a href="#" class="project-link">→ Voir les présentations réalisées</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="argumentation">
-                    <h4 class="argumentation-title">💭 Argumentation</h4>
-                    <p>
-                        Ma capacité à communiquer efficacement s'est développée à travers mes expériences variées. Je sais
-                        adapter mon discours selon l'interlocuteur : technique avec les développeurs, vulgarisé avec les
-                        experts métier. J'utilise les outils collaboratifs modernes et je privilégie la transparence dans
-                        la communication pour éviter les malentendus.
-                    </p>
-                    <span class="mastery-badge mastery-acquired">Maîtrisé</span>
-                </div>
-            </div>
-
-            <div class="competency-card">
-                <div class="ac-header">
-                    <div class="ac-icon">📊</div>
-                    <h3 class="ac-title">AC6.4 : Rendre compte de son activité professionnelle</h3>
-                </div>
-                <div class="ce-badge">CE : Reporting et documentation</div>
-
-                <div class="evidence-section">
-                    <h4 class="evidence-title">🔍 Traces d'activités</h4>
-                    <ul class="evidence-list">
-                        <li class="evidence-item">
-                            <strong>Stage :</strong> Rapports hebdomadaires détaillés, documentation technique complète
-                            <br><a href="#" class="project-link">→ Voir les rapports d'activité</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Projets étudiants :</strong> Documentation systématique sur GitHub, README détaillés
-                            <br><a href="#" class="project-link">→ Voir les repositories documentés</a>
-                        </li>
-                        <li class="evidence-item">
-                            <strong>Portfolio :</strong> Synthèse structurée des apprentissages et compétences acquises
-                            <br><a href="#" class="project-link">→ Voir ce portfolio</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="argumentation">
-                    <h4 class="argumentation-title">💭 Argumentation</h4>
-                    <p>
-                        J'ai développé des habitudes de documentation rigoureuses. En stage, je rédigeais des rapports
-                        hebdomadaires détaillés permettant un suivi efficace de l'avancement. Je documente systématiquement
-                        mes projets avec des README complets et des commentaires de code. Ce portfolio illustre ma capacité
-                        à synthétiser et présenter mes apprentissages de manière structurée.
-                    </p>
-                    <span class="mastery-badge mastery-acquired">Maîtrisé</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Synthèse -->
-    <section class="competency-section section">
-        <div class="competency-card" style="max-width: 800px; margin: 0 auto;">
-            <h2 style="color: var(--primary-color); text-align: center; margin-bottom: 2rem;">Synthèse et Perspectives</h2>
-
-            <div class="argumentation">
-                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Bilan des apprentissages</h3>
-                <p style="margin-bottom: 1rem;">
-                    Ce semestre m'a permis de consolider mes compétences techniques tout en développant ma vision
-                    globale du métier d'informaticien. Mon stage à la Chaire Score a été particulièrement formateur,
-                    me confrontant aux enjeux réels de l'automatisation par l'IA dans un contexte professionnel.
-                </p>
-
-                <p style="margin-bottom: 1rem;">
-                    Les projets collaboratifs (Jeu Train, GameJam, Nuit de l'Info) ont renforcé mes compétences
-                    en travail d'équipe et m'ont fait découvrir différentes méthodologies de développement.
-                    J'ai particulièrement apprécié la diversité des technologies abordées : de Java/JavaFX à
-                    Python/FastAPI en passant par Unreal Engine.
-                </p>
-
-                <h3 style="color: var(--primary-color); margin: 2rem 0 1rem 0;">Points d'amélioration identifiés</h3>
-                <p style="margin-bottom: 1rem;">
-                    Je souhaite approfondir mes connaissances en sécurité applicative et en testing automatisé.
-                    Les aspects environnementaux du développement logiciel méritent également une attention
-                    particulière dans mes futurs projets.
-                </p>
-
-                <h3 style="color: var(--primary-color); margin: 2rem 0 1rem 0;">Objectifs pour la suite</h3>
-                <p>
-                    Pour le semestre 5, je vise à me spécialiser davantage dans l'intelligence artificielle
-                    appliquée tout en maintenant une approche polyvalente. Je souhaite également prendre plus
-                    de responsabilités dans les projets d'équipe et développer mes compétences en leadership
-                    technique.
-                </p>
-            </div>
-        </div>
-    </section>
-</main>
-
-<!-- Footer -->
-<footer style="background: var(--gradient-primary); color: white; text-align: center; padding: 2rem 0; margin-top: 4rem;">
-    <div class="container">
-        <p>Portfolio d'Apprentissage - BUT Informatique Niveau 2</p>
-        <p style="opacity: 0.8; margin-top: 0.5rem;">Dernière mise à jour : Juin 2025</p>
-    </div>
-</footer>
-
-<script>
-    // Smooth scrolling for navigation
-    document.querySelectorAll('.nav-pill').forEach(pill => {
-        pill.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-
-            // Remove active class from all pills
-            document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
-            // Add active class to clicked pill
-            this.classList.add('active');
-
-            // Smooth scroll to target
-            targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-    });
-
-    // Update active navigation on scroll
-    window.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('.section');
-        const navPills = document.querySelectorAll('.nav-pill');
-
-        let currentSection = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                currentSection = section.getAttribute('id');
-            }
-        });
-
-        navPills.forEach(pill => {
-            pill.classList.remove('active');
-            if (pill.getAttribute('href') === '#' + currentSection) {
-                pill.classList.add('active');
-            }
-        });
-    });
-
-    // Add loading animation
-    document.addEventListener('DOMContentLoaded', function() {
-        const cards = document.querySelectorAll('.competency-card');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Smooth scroll for navigation pills
+        document.querySelectorAll('.nav-pill').forEach(pill => {
+            pill.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = pill.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-        }, { threshold: 0.1 });
-
-        cards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
         });
-    });
-</script>
+
+        // Add active class to nav pills on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3
+        };
+
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.nav-pill').forEach(pill => {
+                        pill.classList.remove('active');
+                        if (pill.getAttribute('href') === `#${id}`) {
+                            pill.classList.add('active');
+                        }
+                    });
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        document.querySelectorAll('.competency-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Hide/show back button on scroll
+        const backButton = document.querySelector('.back-button');
+        let lastScrollTop = 0;
+        let scrollTimeout;
+
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            
+            scrollTimeout = setTimeout(() => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // Scrolling down & past 100px
+                    backButton.style.opacity = '0';
+                    backButton.style.transform = 'translateX(-100px)';
+                    backButton.style.pointerEvents = 'none';
+                } else {
+                    // Scrolling up or at top
+                    backButton.style.opacity = '1';
+                    backButton.style.transform = 'translateX(0)';
+                    backButton.style.pointerEvents = 'auto';
+                }
+                
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            }, 100);
+        });
+    </script>
 </body>
 </html>
