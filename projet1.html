@@ -3,286 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeu de Société Train - Nicolas Lyfoung</title>
-    <meta name="description" content="Projet de recréation du jeu de société Train en Java avec interface graphique JavaFX.">
-    
+    <title>Infrastructure Docker - Nicolas Lyfoung</title>
+    <meta name="description" content="Projet de conteneurisation et orchestration d'applications avec Docker et Docker Compose.">
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/modern.css">
     <link rel="stylesheet" href="css/project.css">
-    
+
     <!-- Font Awesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.html" class="navbar-brand">
-                <i class="fas fa-code"></i>
-                Nicolas L.
-            </a>
-            
-            <ul class="navbar-menu">
-                <li><a href="index.html#about" class="navbar-link">À propos</a></li>
-                <li><a href="index.html#education" class="navbar-link">Formation</a></li>
-                <li><a href="index.html#projects" class="navbar-link">Projets</a></li>
-                <li><a href="index.html#skills" class="navbar-link">Compétences</a></li>
-                <li><a href="contact.html" class="navbar-link">Contact</a></li>
-                <li>
-                    <a href="pdf/cv.pdf" class="btn btn-primary" target="_blank">
-                        <i class="fas fa-download"></i> CV
-                    </a>
-                </li>
-            </ul>
-            
-            <button class="mobile-menu-toggle">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
-        </div>
-    </nav>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <a href="index.html" class="navbar-brand">
+            <i class="fas fa-code"></i>
+            Nicolas L.
+        </a>
 
-    <!-- Project Hero -->
-    <section class="project-hero">
-        <div class="container">
-            <div class="project-hero-content animate-on-scroll">
-                <a href="index.html#projects" class="back-link">
-                    <i class="fas fa-arrow-left"></i> Retour aux projets
+        <ul class="navbar-menu">
+            <li><a href="index.html#about" class="navbar-link">À propos</a></li>
+            <li><a href="index.html#education" class="navbar-link">Formation</a></li>
+            <li><a href="index.html#projects" class="navbar-link">Projets</a></li>
+            <li><a href="index.html#skills" class="navbar-link">Compétences</a></li>
+            <li><a href="contact.html" class="navbar-link">Contact</a></li>
+            <li>
+                <a href="pdf/cv.pdf" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-download"></i> CV
                 </a>
-                
-                <h1 class="project-hero-title">Jeu de Société Train</h1>
-                
-                <div class="project-meta">
+            </li>
+        </ul>
+
+        <button class="mobile-menu-toggle">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+    </div>
+</nav>
+
+<!-- Project Hero -->
+<section class="project-hero">
+    <div class="container">
+        <div class="project-hero-content animate-on-scroll">
+            <a href="index.html#projects" class="back-link">
+                <i class="fas fa-arrow-left"></i> Retour aux projets
+            </a>
+
+            <h1 class="project-hero-title">Infrastructure Docker</h1>
+
+            <div class="project-meta">
                     <span class="project-date">
                         <i class="far fa-calendar"></i> 2024
                     </span>
-                    <span class="project-type">
-                        <i class="fas fa-gamepad"></i> Jeu de société
+                <span class="project-type">
+                        <i class="fas fa-server"></i> DevOps & Infrastructure
                     </span>
-                    <span class="project-duration">
-                        <i class="far fa-clock"></i> 3 mois
+                <span class="project-duration">
+                        <i class="far fa-clock"></i> 2 mois
                     </span>
-                </div>
-                
-                <p class="project-intro">
-                    Recréation complète du célèbre jeu de société Train en Java, avec une interface 
-                    graphique moderne développée en JavaFX/FXML. Ce projet a nécessité une analyse 
-                    approfondie des règles du jeu et leur implémentation fidèle.
-                </p>
             </div>
-        </div>
-    </section>
 
-    <!-- Project Content -->
-    <section class="project-content-section">
-        <div class="container">
-            <div class="project-layout">
-                <!-- Main Content -->
-                <div class="project-main animate-on-scroll">
-                    <!-- Gallery -->
-                    <div class="project-gallery">
-                        <img src="img/projet3.png" alt="Interface du jeu Train" class="project-screenshot">
-                    </div>
-                    
-                    <!-- Description -->
-                    <div class="project-section">
-                        <h2>Vue d'ensemble</h2>
-                        <p>
-                            Ce projet a consisté à recréer le jeu de société Train en utilisant Java et JavaFX. 
-                            L'objectif était de créer une version numérique fidèle au jeu original, tout en 
-                            offrant une expérience utilisateur moderne et intuitive.
-                        </p>
-                        <p>
-                            Le développement s'est concentré sur trois aspects principaux : l'implémentation 
-                            rigoureuse des règles du jeu, la création d'une interface graphique ergonomique, 
-                            et l'optimisation des performances pour une expérience fluide.
-                        </p>
-                    </div>
-                    
-                    <!-- Features -->
-                    <div class="project-section">
-                        <h2>Fonctionnalités principales</h2>
-                        <ul class="feature-list">
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Mode multijoueur local jusqu'à 4 joueurs
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Interface graphique intuitive avec drag & drop
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Système de sauvegarde et chargement de parties
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Animations fluides et effets visuels
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Système de scores et statistiques détaillées
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Tutoriel interactif pour les nouveaux joueurs
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Technical Details -->
-                    <div class="project-section">
-                        <h2>Défis techniques</h2>
-                        <p>
-                            Le principal défi était d'implémenter la logique complexe du jeu tout en maintenant 
-                            une architecture de code claire et maintenable. J'ai utilisé le pattern MVC pour 
-                            séparer la logique métier de l'interface utilisateur.
-                        </p>
-                        <p>
-                            La gestion des états de jeu et des interactions utilisateur a nécessité une 
-                            attention particulière pour garantir une expérience fluide et sans bugs.
-                        </p>
-                    </div>
-                    
-                    <!-- Competencies -->
-                    <div class="project-section">
-                        <h2>Compétences développées</h2>
-                        
-                        <div class="competency-grid">
-                            <div class="competency-card">
-                                <h3><i class="fas fa-code"></i> Réaliser un développement d'application</h3>
-                                <ul>
-                                    <li>Conception orientée objet avancée</li>
-                                    <li>Implémentation de patterns de design</li>
-                                    <li>Tests unitaires et d'intégration</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="competency-card">
-                                <h3><i class="fas fa-tachometer-alt"></i> Optimiser des applications</h3>
-                                <ul>
-                                    <li>Algorithmes de pathfinding optimisés</li>
-                                    <li>Gestion efficace de la mémoire</li>
-                                    <li>Optimisation des rendus graphiques</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="competency-card">
-                                <h3><i class="fas fa-database"></i> Gérer des données</h3>
-                                <ul>
-                                    <li>Système de persistance des données</li>
-                                    <li>Sérialisation/désérialisation</li>
-                                    <li>Gestion des états de jeu</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="competency-card">
-                                <h3><i class="fas fa-project-diagram"></i> Conduire un projet</h3>
-                                <ul>
-                                    <li>Planification avec méthode Agile</li>
-                                    <li>Documentation technique complète</li>
-                                    <li>Gestion des versions avec Git</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="competency-card">
-                                <h3><i class="fas fa-users"></i> Collaborer au sein d'une équipe</h3>
-                                <ul>
-                                    <li>Travail en équipe de 4 personnes</li>
-                                    <li>Code reviews régulières</li>
-                                    <li>Communication via Discord/GitHub</li>
-                                </ul>
-                            </div>
+            <p class="project-intro">
+                Mise en place d'une infrastructure complète de conteneurisation avec Docker pour
+                orchestrer des applications multi-services. Ce projet a permis d'automatiser le
+                déploiement et de garantir la portabilité des environnements de développement à la production.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Project Content -->
+<section class="project-content-section">
+    <div class="container">
+        <div class="project-layout">
+            <!-- Main Content -->
+            <div class="project-main animate-on-scroll">
+                <!-- Gallery -->
+                <div class="project-gallery">
+                    <img src="img/projet3.png" alt="Architecture Docker" class="project-screenshot">
+                </div>
+
+                <!-- Description -->
+                <div class="project-section">
+                    <h2>Vue d'ensemble</h2>
+                    <p>
+                        Ce projet a consisté à créer une infrastructure Docker complète pour orchestrer
+                        plusieurs services interconnectés. L'objectif était de conteneuriser une application
+                        web full-stack avec sa base de données, son serveur web et ses services auxiliaires.
+                    </p>
+                    <p>
+                        Le développement s'est concentré sur trois aspects principaux : la création de
+                        Dockerfiles optimisés pour chaque service, la mise en place d'une orchestration
+                        avec Docker Compose, et l'implémentation de bonnes pratiques de sécurité et de performance.
+                    </p>
+                </div>
+
+                <!-- Features -->
+                <div class="project-section">
+                    <h2>Fonctionnalités principales</h2>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Architecture multi-conteneurs avec Docker Compose
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Images Docker optimisées avec build multi-stage
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Gestion des volumes pour la persistance des données
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Réseau Docker isolé pour la sécurité
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Variables d'environnement pour la configuration
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Healthchecks et restart automatique des services
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Technical Details -->
+                <div class="project-section">
+                    <h2>Défis techniques</h2>
+                    <p>
+                        Le principal défi était d'optimiser la taille des images Docker tout en maintenant
+                        toutes les fonctionnalités nécessaires. J'ai utilisé des techniques de build multi-stage
+                        et choisi des images de base minimales (Alpine Linux) pour réduire l'empreinte.
+                    </p>
+                    <p>
+                        La gestion de l'orchestration des services et de leurs dépendances a nécessité une
+                        attention particulière pour garantir un démarrage correct et une communication fluide
+                        entre les conteneurs.
+                    </p>
+                </div>
+
+                <!-- Competencies -->
+                <div class="project-section">
+                    <h2>Compétences développées</h2>
+
+                    <div class="competency-grid">
+                        <div class="competency-card">
+                            <h3><i class="fas fa-code"></i> Réaliser un développement d'application</h3>
+                            <ul>
+                                <li>Création de Dockerfiles optimisés</li>
+                                <li>Scripts d'automatisation en Bash</li>
+                                <li>Configuration de services avec YAML</li>
+                            </ul>
+                        </div>
+
+                        <div class="competency-card">
+                            <h3><i class="fas fa-tachometer-alt"></i> Optimiser des applications</h3>
+                            <ul>
+                                <li>Build multi-stage pour images légères</li>
+                                <li>Mise en cache efficace des layers</li>
+                                <li>Optimisation des temps de démarrage</li>
+                            </ul>
+                        </div>
+
+                        <div class="competency-card">
+                            <h3><i class="fas fa-database"></i> Gérer des données</h3>
+                            <ul>
+                                <li>Volumes Docker pour la persistance</li>
+                                <li>Backup et restore de conteneurs</li>
+                                <li>Gestion des bases de données conteneurisées</li>
+                            </ul>
+                        </div>
+
+                        <div class="competency-card">
+                            <h3><i class="fas fa-project-diagram"></i> Conduire un projet</h3>
+                            <ul>
+                                <li>Documentation complète avec README</li>
+                                <li>Versionning avec Git et GitFlow</li>
+                                <li>CI/CD avec GitHub Actions</li>
+                            </ul>
+                        </div>
+
+                        <div class="competency-card">
+                            <h3><i class="fas fa-shield-alt"></i> Administration système</h3>
+                            <ul>
+                                <li>Sécurisation des conteneurs</li>
+                                <li>Gestion des réseaux Docker</li>
+                                <li>Monitoring et logging centralisé</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Sidebar -->
-                <aside class="project-sidebar animate-on-scroll">
-                    <!-- Tech Stack -->
-                    <div class="sidebar-section">
-                        <h3>Technologies utilisées</h3>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Java 17</span>
-                            <span class="tech-badge">JavaFX</span>
-                            <span class="tech-badge">FXML</span>
-                            <span class="tech-badge">Maven</span>
-                            <span class="tech-badge">JUnit</span>
-                            <span class="tech-badge">Git</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Links -->
-                    <div class="sidebar-section">
-                        <h3>Liens du projet</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/Nikholah/Train" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                Code source sur GitHub
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Team -->
-                    <div class="sidebar-section">
-                        <h3>Équipe</h3>
-                        <p class="team-info">
-                            Projet réalisé en équipe de 4 étudiants dans le cadre 
-                            du DUT Informatique.
-                        </p>
-                    </div>
-                    
-                    <!-- Key Learnings -->
-                    <div class="sidebar-section">
-                        <h3>Points clés</h3>
-                        <ul class="key-points">
-                            <li>Architecture MVC robuste</li>
-                            <li>Interface utilisateur responsive</li>
-                            <li>Gestion d'états complexes</li>
-                            <li>Travail d'équipe efficace</li>
-                        </ul>
-                    </div>
-                </aside>
             </div>
-        </div>
-    </section>
 
-    <!-- Navigation Projects -->
-    <section class="project-navigation">
-        <div class="container">
-            <div class="nav-projects">
-                <a href="projet2.html" class="nav-project next">
-                    <span class="nav-label">Projet suivant</span>
-                    <span class="nav-title">Code Game Jam 2024 <i class="fas fa-arrow-right"></i></span>
+            <!-- Sidebar -->
+            <aside class="project-sidebar animate-on-scroll">
+                <!-- Tech Stack -->
+                <div class="sidebar-section">
+                    <h3>Technologies utilisées</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">Docker Compose</span>
+                        <span class="tech-badge">Linux Alpine</span>
+                        <span class="tech-badge">Nginx</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">Git</span>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="sidebar-section">
+                    <h3>Liens du projet</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/Nikholah/docker-infrastructure" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i>
+                            Code source sur GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Team -->
+                <div class="sidebar-section">
+                    <h3>Contexte</h3>
+                    <p class="team-info">
+                        Projet personnel réalisé dans le cadre d'une formation DevOps
+                        pour améliorer mes compétences en conteneurisation.
+                    </p>
+                </div>
+
+                <!-- Key Learnings -->
+                <div class="sidebar-section">
+                    <h3>Points clés</h3>
+                    <ul class="key-points">
+                        <li>Architecture microservices</li>
+                        <li>Images optimisées et sécurisées</li>
+                        <li>Orchestration automatisée</li>
+                        <li>Environnements reproductibles</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<!-- Navigation Projects -->
+<section class="project-navigation">
+    <div class="container">
+        <div class="nav-projects">
+            <a href="projet2.html" class="nav-project next">
+                <span class="nav-label">Projet suivant</span>
+                <span class="nav-title">Code Game Jam 2024 <i class="fas fa-arrow-right"></i></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; 2024 Nicolas Lyfoung. Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="https://github.com/Nikholah" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/nicolas-lyfoung/" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:contact@nicolaslyfoung.fr" class="social-link">
+                    <i class="fas fa-envelope"></i>
                 </a>
             </div>
         </div>
-    </section>
+    </div>
+</footer>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2024 Nicolas Lyfoung. Tous droits réservés.</p>
-                <div class="social-links">
-                    <a href="https://github.com/Nikholah" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/nicolas-lyfoung/" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:contact@nicolaslyfoung.fr" class="social-link">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
+<!-- Scripts -->
+<script src="js/main.js"></script>
 </body>
 </html>
