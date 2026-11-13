@@ -23,10 +23,11 @@
             </a>
             
             <ul class="navbar-menu">
-                <li><a href="index.html#about" class="navbar-link">À propos</a></li>
+                <li><a href="index.html#about" class="navbar-link">Alternance</a></li>
                 <li><a href="index.html#education" class="navbar-link">Formation</a></li>
                 <li><a href="index.html#projects" class="navbar-link">Projets</a></li>
                 <li><a href="index.html#skills" class="navbar-link">Compétences</a></li>
+                <li><a href="index.html#passions" class="navbar-link">Passions</a></li>
                 <li><a href="contact.html" class="navbar-link active">Contact</a></li>
                 <li>
                     <a href="pdf/cv.pdf" class="btn btn-primary" target="_blank">
@@ -97,34 +98,36 @@
                 <!-- Contact Form -->
                 <div class="contact-form-wrapper animate-on-scroll">
                     <form id="contact-form" class="contact-form">
+                        <!-- L'input précède le label : nécessaire pour les labels flottants (CSS) -->
                         <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder=" " autocomplete="name" required>
                             <label for="name">Nom complet</label>
-                            <input type="text" id="name" name="name" required>
-                            <span class="error-message" id="name-error"></span>
+                            <span class="error-message" id="name-error" role="alert"></span>
                         </div>
-                        
+
                         <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder=" " autocomplete="email" required>
                             <label for="email">Adresse email</label>
-                            <input type="email" id="email" name="email" required>
-                            <span class="error-message" id="email-error"></span>
+                            <span class="error-message" id="email-error" role="alert"></span>
                         </div>
-                        
+
                         <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder=" " required>
                             <label for="subject">Sujet</label>
-                            <input type="text" id="subject" name="subject" required>
-                            <span class="error-message" id="subject-error"></span>
+                            <span class="error-message" id="subject-error" role="alert"></span>
                         </div>
-                        
+
                         <div class="form-group">
+                            <textarea id="message" name="message" rows="6" placeholder=" " required></textarea>
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="6" required></textarea>
-                            <span class="error-message" id="message-error"></span>
+                            <span class="error-message" id="message-error" role="alert"></span>
                         </div>
-                        
+
                         <button type="submit" class="btn btn-primary btn-submit">
-                            <i class="fas fa-paper-plane"></i>
                             Envoyer le message
+                            <i class="fas fa-paper-plane"></i>
                         </button>
+                        <p class="form-note">Le message s'ouvre dans votre messagerie, prêt à être envoyé.</p>
                     </form>
                 </div>
             </div>
@@ -143,7 +146,7 @@
                     <a href="https://www.linkedin.com/in/nicolas-lyfoung/" target="_blank" class="social-link">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="mailto:contact@nicolaslyfoung.fr" class="social-link">
+                    <a href="mailto:nicolaslyf@gmail.com" class="social-link">
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
@@ -152,6 +155,9 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

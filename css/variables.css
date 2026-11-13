@@ -1,27 +1,50 @@
 :root {
-  /* Couleurs principales */
-  --primary-color: #2563eb;
-  --primary-dark: #1d4ed8;
-  --primary-light: #60a5fa;
-  --secondary-color: #7c3aed;
-  --accent-color: #06b6d4;
-  
+  color-scheme: dark;
+
+  /* Néons */
+  --neon-blue: #4f7cff;
+  --neon-violet: #a855f7;
+  --neon-cyan: #22d3ee;
+  --neon-blue-rgb: 79, 124, 255;
+  --neon-violet-rgb: 168, 85, 247;
+  --neon-cyan-rgb: 34, 211, 238;
+
+  /* Couleurs principales (noms historiques conservés) */
+  --primary-color: var(--neon-blue);
+  --primary-dark: #3a63e0;
+  --primary-light: #8fb0ff;
+  --secondary-color: var(--neon-violet);
+  --accent-color: var(--neon-cyan);
+
   /* Couleurs neutres */
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --text-light: #94a3b8;
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --bg-dark: #0f172a;
-  --border-color: #e2e8f0;
-  
-  /* Ombres */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  
+  --text-primary: #e8ecf8;
+  --text-secondary: #a3acc8;
+  --text-light: #6f7896;
+  --bg-primary: #0b0d1a;
+  --bg-secondary: #05060f;
+  --bg-dark: #03040a;
+  --border-color: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.18);
+
+  /* Surfaces en verre */
+  --surface: rgba(255, 255, 255, 0.035);
+  --surface-strong: rgba(255, 255, 255, 0.07);
+  --surface-blur: blur(14px);
+
+  /* Dégradés */
+  --gradient-neon: linear-gradient(100deg, var(--neon-blue), var(--neon-violet) 55%, var(--neon-cyan));
+  --gradient-soft: linear-gradient(135deg, rgba(var(--neon-blue-rgb), 0.16), rgba(var(--neon-violet-rgb), 0.12));
+
+  /* Ombres et glow */
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow: 0 2px 8px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.45);
+  --shadow-lg: 0 16px 40px rgb(0 0 0 / 0.5);
+  --shadow-xl: 0 28px 60px rgb(0 0 0 / 0.55);
+  --glow-blue: 0 0 0 1px rgba(var(--neon-blue-rgb), 0.45), 0 0 32px rgba(var(--neon-blue-rgb), 0.28);
+  --glow-violet: 0 0 0 1px rgba(var(--neon-violet-rgb), 0.45), 0 0 32px rgba(var(--neon-violet-rgb), 0.28);
+  --glow-cyan: 0 0 0 1px rgba(var(--neon-cyan-rgb), 0.45), 0 0 32px rgba(var(--neon-cyan-rgb), 0.25);
+
   /* Espacements */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
@@ -29,18 +52,20 @@
   --space-lg: 2rem;
   --space-xl: 3rem;
   --space-2xl: 4rem;
-  
+  --space-3xl: 7rem;
+
   /* Bordures */
   --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
   --radius-full: 9999px;
-  
+
   /* Typographie */
+  --font-display: 'Space Grotesk', 'Inter', -apple-system, 'Segoe UI', sans-serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  --font-mono: 'Fira Code', 'Consolas', monospace;
-  
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
   /* Tailles de police */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -51,12 +76,13 @@
   --text-3xl: 1.875rem;
   --text-4xl: 2.25rem;
   --text-5xl: 3rem;
-  
+
   /* Transitions */
-  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 180ms var(--ease-out);
+  --transition-base: 350ms var(--ease-out);
+  --transition-slow: 700ms var(--ease-out);
+
   /* Z-index */
   --z-base: 0;
   --z-dropdown: 10;
@@ -66,23 +92,6 @@
   --z-modal: 50;
   --z-popover: 60;
   --z-tooltip: 70;
+  --z-cursor: 90;
+  --z-loader: 100;
 }
-
-/* Mode sombre */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-primary: #f1f5f9;
-    --text-secondary: #cbd5e1;
-    --text-light: #94a3b8;
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --bg-dark: #020617;
-    --border-color: #334155;
-  }
-}
-
-/* Breakpoints pour responsive */
-@custom-media --mobile (max-width: 640px);
-@custom-media --tablet (max-width: 768px);
-@custom-media --laptop (max-width: 1024px);
-@custom-media --desktop (min-width: 1280px);

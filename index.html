@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolas Lyfoung - Portfolio</title>
     <meta name="description" content="Portfolio de Nicolas Lyfoung, étudiant en informatique passionné par le développement web et les nouvelles technologies.">
+    <meta name="theme-color" content="#05060f">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/modern.css">
@@ -13,11 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<!-- Loader -->
-<div class="loader">
-    <div class="loader-spinner"></div>
-</div>
-
 <!-- Navigation -->
 <nav class="navbar">
     <div class="navbar-container">
@@ -27,11 +23,11 @@
         </a>
 
         <ul class="navbar-menu">
-            <li><a href="#about" class="navbar-link">À propos</a></li>
+            <li><a href="#about" class="navbar-link">Alternance</a></li>
             <li><a href="#education" class="navbar-link">Formation</a></li>
             <li><a href="#projects" class="navbar-link">Projets</a></li>
             <li><a href="#skills" class="navbar-link">Compétences</a></li>
-<!--            <li><a href="portfolio-dapprentissage.html" class="navbar-link">Portfolio d'apprentissage</a></li>-->
+            <li><a href="#passions" class="navbar-link">Passions</a></li>
             <li><a href="contact.html" class="navbar-link">Contact</a></li>
             <li>
                 <a href="pdf/cv.pdf" class="btn btn-primary" target="_blank">
@@ -40,7 +36,7 @@
             </li>
         </ul>
 
-        <button class="mobile-menu-toggle">
+        <button class="mobile-menu-toggle" aria-label="Ouvrir ou fermer le menu">
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -50,19 +46,32 @@
     </div>
 </nav>
 
+<main>
 <!-- Hero Section -->
 <section class="hero">
+    <canvas class="hero-canvas" aria-hidden="true"></canvas>
+
     <div class="container">
-        <div class="hero-content animate-on-scroll">
-            <h1 class="hero-title" data-typed="Nicolas Lyfoung">Nicolas Lyfoung</h1>
-            <p class="hero-subtitle">Étudiant en informatique & Développeur passionné</p>
+        <div class="hero-content">
+            <p class="hero-eyebrow">Alternant chez PeopleSpheres · BUT Informatique 3ᵉ année</p>
+
+            <h1 class="hero-title" aria-label="Nicolas Lyfoung">
+                <span class="hero-line">Nicolas</span>
+                <span class="hero-line hero-line--accent">Lyfoung</span>
+            </h1>
+
+            <p class="hero-roles">
+                &gt; <span class="role-text" data-roles="développeur web|curieux d'IA|adepte de DevOps|volleyeur &amp; basketteur|guitariste débutant">développeur web</span><span class="role-caret" aria-hidden="true"></span>
+            </p>
+
             <p class="hero-description">
-                Actuellement en 3ème année d'IUT Informatique, je suis passionné par le développement web,
+                En alternance chez PeopleSpheres et en 3ème année de BUT Informatique, je suis passionné par le développement web,
                 les nouvelles technologies et la création d'applications innovantes.
             </p>
+
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">
-                    <i class="fas fa-eye"></i> Voir mes projets
+                    Voir mes projets <i class="fas fa-arrow-right"></i>
                 </a>
                 <a href="contact.html" class="btn btn-secondary">
                     <i class="fas fa-envelope"></i> Me contacter
@@ -71,59 +80,89 @@
 
             <!-- Social Links -->
             <div class="social-links mt-lg">
-                <a href="https://github.com/Nikholah" target="_blank" class="social-link">
+                <a href="https://github.com/Nikholah" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/nicolas-lyfoung/" target="_blank" class="social-link">
+                <a href="https://www.linkedin.com/in/nicolas-lyfoung/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
             </div>
         </div>
     </div>
+
+    <a href="#about" class="scroll-indicator" aria-label="Aller à la section Alternance">
+        Scroll
+        <span></span>
+    </a>
 </section>
+
+<!-- Bandeau des technos -->
+<div class="marquee" aria-label="Technologies utilisées">
+    <div class="marquee-track">
+        <ul class="marquee-group">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Laravel</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>C</li>
+            <li>SQL</li>
+            <li>PostgreSQL</li>
+            <li>Docker</li>
+            <li>Git</li>
+            <li>FastAPI</li>
+            <li>LangChain</li>
+            <li>CI/CD</li>
+        </ul>
+    </div>
+</div>
 
 <!-- About Section -->
 <section id="about" class="section">
     <div class="container">
-        <h2 class="section-title animate-on-scroll">À propos de moi</h2>
+        <p class="section-eyebrow" data-reveal>01 — En ce moment</p>
+        <h2 class="section-title section-title--wide">En alternance chez PeopleSpheres</h2>
 
         <div class="about-grid">
-            <div class="about-content animate-on-scroll">
-                <div class="about-text">
-                    <p>
-                        Étudiant passionné en troisième année d'IUT Informatique à Montpellier,
-                        je suis fasciné par le développement et les nouvelles technologies.
-                        J'aime particulièrement créer des applications web et des programmes d'automatisation
-                        qui résolvent des problèmes concrets.
-                    </p>
-                    <p>
-                        Curieux, autonome et rigoureux, j'aime comprendre comment les choses fonctionnent
-                        et aller au bout de mes idées. Travailler sur des projets concrets me motive énormément,
-                        surtout quand je peux mêler technique et logique.
-                    </p>
-                    <p>
-                        En dehors de l'informatique, je suis très actif. Je pratique le volley et le basket,
-                        deux sports qui développent l'esprit d'équipe et la stratégie. J'apprends également
-                        la guitare depuis quelques mois, un excellent moyen d'exprimer ma créativité.
-                    </p>
+            <div class="about-text">
+                <p data-reveal>
+                    Depuis le <strong>26 octobre 2026</strong>, je suis en alternance chez
+                    <strong>PeopleSpheres</strong>, en parallèle de ma troisième année de
+                    BUT Informatique à l'IUT de Montpellier.
+                </p>
+                <p data-reveal>
+                    J'y occupe le poste de <strong>Développeur junior R&amp;D</strong> : je corrige des bugs
+                    et je développe de nouvelles fonctionnalités, avec Laravel, PostgreSQL et Docker.
+                </p>
+                <div class="project-tech" data-reveal>
+                    <span class="tech-tag">Laravel</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Docker</span>
                 </div>
+                <p data-reveal>
+                    Curieux, autonome et rigoureux, j'aime comprendre comment les choses fonctionnent
+                    et aller au bout de mes idées. Travailler sur des projets concrets me motive énormément,
+                    surtout quand je peux mêler technique et logique.
+                </p>
+            </div>
 
-                <div class="about-highlights">
-                    <div class="highlight-card">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h4>3ème année IUT</h4>
-                        <p>Informatique à Montpellier</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-users"></i>
-                        <h4>Ancien membre du BDE</h4>
-                        <p>Engagement associatif</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-code"></i>
-                        <h4>Développeur</h4>
-                        <p>Passionné de web</p>
-                    </div>
+            <div class="stats-grid">
+                <div class="stat-card" data-reveal="scale">
+                    <p class="stat-value"><span data-count-since="2026-10-26">—</span></p>
+                    <p class="stat-label">jours d'alternance chez PeopleSpheres, et ça continue</p>
+                </div>
+                <div class="stat-card" data-reveal="scale">
+                    <p class="stat-value"><span data-count="3">3</span></p>
+                    <p class="stat-label">années de BUT Informatique à Montpellier</p>
+                </div>
+                <div class="stat-card" data-reveal="scale">
+                    <p class="stat-value"><span data-count="3">3</span></p>
+                    <p class="stat-label">mois de stage sur une application d'IA</p>
+                </div>
+                <div class="stat-card" data-reveal="scale">
+                    <p class="stat-value"><span data-count="600">600</span></p>
+                    <p class="stat-label">pages par rapport, analysées automatiquement par mon appli de stage</p>
                 </div>
             </div>
         </div>
@@ -131,12 +170,13 @@
 </section>
 
 <!-- Education Section -->
-<section id="education" class="section" style="background: var(--bg-primary);">
+<section id="education" class="section">
     <div class="container">
-        <h2 class="section-title animate-on-scroll">Formation</h2>
+        <p class="section-eyebrow" data-reveal>02 — Parcours</p>
+        <h2 class="section-title">Formation</h2>
 
-        <div class="timeline animate-on-scroll">
-            <div class="timeline-item">
+        <div class="timeline">
+            <div class="timeline-item" data-reveal="left">
                 <div class="timeline-date">2023 - Présent</div>
                 <h3 class="timeline-title">BUT Informatique</h3>
                 <p class="timeline-description">
@@ -145,7 +185,7 @@
                 </p>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item" data-reveal="left">
                 <div class="timeline-date">2020 - 2023</div>
                 <h3 class="timeline-title">Baccalauréat Général</h3>
                 <p class="timeline-description">
@@ -161,17 +201,18 @@
 <!-- Professional Projects Section -->
 <section id="professional-vision" class="section">
     <div class="container">
-        <h2 class="section-title animate-on-scroll">Projet(s) professionnel(s) envisagé(s) après le BUT</h2>
+        <p class="section-eyebrow" data-reveal>03 — Et après ?</p>
+        <h2 class="section-title section-title--wide">Projet professionnel envisagé après le BUT</h2>
 
-        <div class="about-content animate-on-scroll">
+        <div class="about-content">
             <div class="about-text">
-                <p>
+                <p data-reveal>
                     Après l'obtention de mon BUT Informatique, mon objectif principal est de <strong>travailler
                     pour acquérir de l'expérience professionnelle</strong> et découvrir concrètement les différents
                     domaines du développement. Cette immersion me permettra de mieux comprendre les réalités du
                     métier et d'identifier le type de développement qui me correspond le mieux.
                 </p>
-                <p>
+                <p data-reveal>
                     Je suis particulièrement intéressé par l'exploration de plusieurs domaines : le
                     <strong>développement web</strong> (frontend et backend), le <strong>DevOps</strong> et
                     l'automatisation, ainsi que les <strong>applications utilisant l'intelligence artificielle</strong>.
@@ -181,17 +222,17 @@
             </div>
 
             <div class="about-highlights">
-                <div class="highlight-card">
+                <div class="highlight-card" data-reveal>
                     <i class="fas fa-briefcase"></i>
                     <h4>Expérience terrain</h4>
                     <p>Acquérir des compétences en entreprise</p>
                 </div>
-                <div class="highlight-card">
+                <div class="highlight-card" data-reveal>
                     <i class="fas fa-compass"></i>
                     <h4>Explorer & découvrir</h4>
                     <p>Tester différents types de développement</p>
                 </div>
-                <div class="highlight-card">
+                <div class="highlight-card" data-reveal>
                     <i class="fas fa-route"></i>
                     <h4>Trouver ma voie</h4>
                     <p>Identifier ma spécialisation idéale</p>
@@ -204,11 +245,14 @@
 <!-- Projects Section -->
 <section id="projects" class="section">
     <div class="container">
-        <h2 class="section-title animate-on-scroll">Mes Projets</h2>
+        <p class="section-eyebrow" data-reveal>04 — Réalisations</p>
+        <h2 class="section-title">Mes Projets</h2>
 
         <div class="projects-grid">
-            <article class="project-card animate-on-scroll">
-                <img src="img/projet3.png" alt="Infrastructure Docker" class="project-image">
+            <article class="project-card" data-reveal data-cursor="Voir">
+                <div class="project-media">
+                    <img src="img/projet3.png" alt="Infrastructure Docker" class="project-image">
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">Infrastructure Docker</h3>
                     <p class="project-description">
@@ -221,14 +265,16 @@
                         <span class="tech-tag">Docker Compose</span>
                         <span class="tech-tag">Linux Alpine</span>
                     </div>
-                    <a href="projet1.html" class="btn btn-primary mt-md">
+                    <a href="projet1.html" class="project-cta">
                         Voir le projet <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </article>
 
-            <article class="project-card animate-on-scroll">
-                <img src="img/projet1.png" alt="Site Vitrine Flory Animation" class="project-image">
+            <article class="project-card" data-reveal data-cursor="Voir">
+                <div class="project-media">
+                    <img src="img/projet1.png" alt="Site Vitrine Flory Animation" class="project-image">
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">Site Vitrine Flory Animation</h3>
                     <p class="project-description">
@@ -242,14 +288,16 @@
                         <span class="tech-tag">JavaScript</span>
                         <span class="tech-tag">SEO</span>
                     </div>
-                    <a href="projet3.html" class="btn btn-primary mt-md">
+                    <a href="projet3.html" class="project-cta">
                         Voir le projet <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </article>
 
-            <article class="project-card animate-on-scroll">
-                <img src="img/projet4.png" alt="Stage Chaire Score" class="project-image">
+            <article class="project-card" data-reveal data-cursor="Voir">
+                <div class="project-media">
+                    <img src="img/projet4.png" alt="Stage Chaire Score" class="project-image">
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">Stage - Chaire Score</h3>
                     <p class="project-description">
@@ -263,7 +311,7 @@
                         <span class="tech-tag">LangChain</span>
                         <span class="tech-tag">IA/LLM</span>
                     </div>
-                    <a href="projet4.html" class="btn btn-primary mt-md">
+                    <a href="projet4.html" class="project-cta">
                         Voir le projet <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -273,67 +321,174 @@
 </section>
 
 <!-- Skills Section -->
-<section id="skills" class="section" style="background: var(--bg-primary);">
+<section id="skills" class="section">
     <div class="container">
-        <h2 class="section-title animate-on-scroll">Compétences</h2>
+        <p class="section-eyebrow" data-reveal>05 — Boîte à outils</p>
+        <h2 class="section-title">Compétences</h2>
 
         <div class="skills-grid">
-            <div class="skill-card animate-on-scroll">
-                <div class="skill-icon">
-                    <i class="fas fa-code"></i>
-                </div>
+            <div class="skill-card" data-reveal>
+                <div class="skill-icon"><i class="fas fa-code"></i></div>
                 <h3 class="skill-name">Développement Web</h3>
-                <p class="skill-level">HTML, CSS, JavaScript</p>
+                <ul class="skill-chips">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                <li>Laravel</li>
+                </ul>
             </div>
 
-            <div class="skill-card animate-on-scroll">
-                <div class="skill-icon">
-                    <i class="fab fa-java"></i>
-                </div>
+            <div class="skill-card" data-reveal>
+                <div class="skill-icon"><i class="fab fa-java"></i></div>
                 <h3 class="skill-name">Programmation</h3>
-                <p class="skill-level">Java, Python, C</p>
+                <ul class="skill-chips">
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>C</li>
+                </ul>
             </div>
 
-            <div class="skill-card animate-on-scroll">
-                <div class="skill-icon">
-                    <i class="fas fa-database"></i>
-                </div>
+            <div class="skill-card" data-reveal>
+                <div class="skill-icon"><i class="fas fa-database"></i></div>
                 <h3 class="skill-name">Base de données</h3>
-                <p class="skill-level">SQL, Cassandra</p>
+                <ul class="skill-chips">
+                    <li>SQL</li>
+                    <li>PostgreSQL</li>
+                    <li>Cassandra</li>
+                </ul>
             </div>
 
-            <div class="skill-card animate-on-scroll">
-                <div class="skill-icon">
-                    <i class="fas fa-git-alt"></i>
-                </div>
+            <div class="skill-card" data-reveal>
+                <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
                 <h3 class="skill-name">Outils & DevOps</h3>
-                <p class="skill-level">Git, Docker, CI/CD</p>
+                <ul class="skill-chips">
+                    <li>Git</li>
+                    <li>Docker</li>
+                    <li>CI/CD</li>
+                </ul>
             </div>
 
-            <div class="skill-card animate-on-scroll">
-                <div class="skill-icon">
-                    <i class="fas fa-users"></i>
-                </div>
+            <div class="skill-card" data-reveal>
+                <div class="skill-icon"><i class="fas fa-users"></i></div>
                 <h3 class="skill-name">Soft Skills</h3>
-                <p class="skill-level">Travail d'équipe, Communication</p>
+                <ul class="skill-chips">
+                    <li>Travail d'équipe</li>
+                    <li>Communication</li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Passions Section -->
+<section id="passions" class="section">
+    <div class="container">
+        <p class="section-eyebrow" data-reveal>06 — Hors écran</p>
+        <h2 class="section-title">Mes passions</h2>
+
+        <div class="passions-grid">
+            <!-- Volley -->
+            <article class="passion-card" data-reveal data-passion="volley">
+                <svg class="passion-visual" viewBox="0 0 240 150" role="img" aria-label="Ballon de volley passant au-dessus d'un filet">
+                    <line class="ground" x1="12" y1="126" x2="228" y2="126"/>
+                    <line class="line neon-violet" x1="120" y1="58" x2="120" y2="126"/>
+                    <line class="line neon-cyan" x1="114" y1="58" x2="126" y2="58"/>
+                    <g class="thin neon-violet">
+                        <line x1="114" y1="68" x2="126" y2="68"/>
+                        <line x1="114" y1="78" x2="126" y2="78"/>
+                        <line x1="114" y1="88" x2="126" y2="88"/>
+                    </g>
+                    <g class="ball-volley" transform="translate(46 114)">
+                        <g class="ball-inner">
+                            <circle r="12"/>
+                            <path d="M-12 0 C-5 -5 5 -5 12 0"/>
+                            <path d="M-8 -9 C-2 -3 -2 5 -7 10"/>
+                            <path d="M8 -9 C3 -3 3 5 7 10"/>
+                        </g>
+                    </g>
+                </svg>
+                <div class="passion-body">
+                    <h3>Volley</h3>
+                    <p>Un sport où rien ne se gagne seul : lire le jeu, communiquer, couvrir ses coéquipiers.</p>
+                    <span class="passion-hint">↑ survole ou touche pour servir</span>
+                </div>
+            </article>
+
+            <!-- Basket -->
+            <article class="passion-card" data-reveal data-passion="basket">
+                <svg class="passion-visual" viewBox="0 0 240 150" role="img" aria-label="Ballon de basket tiré dans un panier">
+                    <line class="ground" x1="12" y1="126" x2="228" y2="126"/>
+                    <g class="ball-basket" transform="translate(40 114)">
+                        <g class="ball-inner">
+                            <circle r="12"/>
+                            <path d="M-12 0 H12 M0 -12 V12"/>
+                            <path d="M-8.5 -8.5 C-3 -3 -3 3 -8.5 8.5 M8.5 -8.5 C3 -3 3 3 8.5 8.5"/>
+                        </g>
+                    </g>
+                    <line class="line neon-violet" x1="212" y1="26" x2="212" y2="74" stroke-width="4"/>
+                    <line class="line neon-cyan" x1="174" y1="62" x2="210" y2="62" stroke-width="3"/>
+                    <g class="hoop-net thin neon-blue">
+                        <path d="M176 63 L182 86"/>
+                        <path d="M185 63 L188 86"/>
+                        <path d="M194 63 L194 86"/>
+                        <path d="M203 63 L200 86"/>
+                        <path d="M208 63 L204 86"/>
+                        <path d="M179 74 H206 M182 86 H204"/>
+                    </g>
+                    <text class="score" x="150" y="44">+2</text>
+                </svg>
+                <div class="passion-body">
+                    <h3>Basket</h3>
+                    <p>Vitesse, stratégie et précision : l'esprit d'équipe au service de l'action décisive.</p>
+                    <span class="passion-hint">↑ survole ou touche pour tirer</span>
+                </div>
+            </article>
+
+            <!-- Guitare -->
+            <article class="passion-card" data-reveal data-passion="guitar">
+                <svg class="passion-visual" viewBox="0 0 240 150" role="img" aria-label="Cordes de guitare au-dessus de la rosace">
+                    <circle class="line neon-violet" cx="120" cy="75" r="46"/>
+                    <circle class="thin neon-cyan" cx="120" cy="75" r="52"/>
+                    <circle cx="120" cy="75" r="45" fill="rgba(3, 4, 10, 0.7)"/>
+                    <path class="string" data-y="45" d="M0 45 L240 45" stroke-width="2.6"/>
+                    <path class="string" data-y="57" d="M0 57 L240 57" stroke-width="2.3"/>
+                    <path class="string" data-y="69" d="M0 69 L240 69" stroke-width="2"/>
+                    <path class="string" data-y="81" d="M0 81 L240 81" stroke-width="1.6"/>
+                    <path class="string" data-y="93" d="M0 93 L240 93" stroke-width="1.3"/>
+                    <path class="string" data-y="105" d="M0 105 L240 105" stroke-width="1"/>
+                </svg>
+                <div class="passion-body">
+                    <h3>Guitare</h3>
+                    <p>Je m'y suis mis il y a quelques mois : un accord après l'autre, pour exprimer ma créativité autrement.</p>
+                    <span class="passion-hint">↑ gratte les cordes (souris ou tap)</span>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+</main>
+
 <!-- Footer -->
 <footer>
     <div class="container">
+        <div class="footer-cta">
+            <h2 class="footer-cta-title">Travaillons ensemble</h2>
+            <p data-reveal>Une idée, un stage, une alternance ou juste envie d'échanger ?</p>
+            <a href="contact.html" class="btn btn-primary" data-reveal>
+                Me contacter <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
         <div class="footer-content">
-            <p>&copy; 2025 Nicolas Lyfoung. Tous droits réservés.</p>
+            <p>&copy; 2026 Nicolas Lyfoung. Tous droits réservés.</p>
             <div class="social-links">
-                <a href="https://github.com/Nikholah" target="_blank" class="social-link">
+                <a href="https://github.com/Nikholah" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/nicolas-lyfoung/" target="_blank" class="social-link">
+                <a href="https://www.linkedin.com/in/nicolas-lyfoung/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="mailto:nicolaslyf@gmail.com" class="social-link">
+                <a href="mailto:nicolaslyf@gmail.com" class="social-link" aria-label="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
@@ -342,6 +497,9 @@
 </footer>
 
 <!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

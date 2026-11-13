@@ -4,89 +4,70 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a modern static portfolio website for Nicolas Lyfoung, a second-year IUT computer science student. The site features a professional design with animations, dark mode support, and interactive elements, built entirely with vanilla HTML/CSS/JavaScript.
+Static portfolio website for Nicolas Lyfoung, a third-year IUT (BUT Informatique) student in Montpellier. Dark "neon" design with heavy use of animation, built with vanilla HTML/CSS/JavaScript and no build step. Content is in French.
 
 ## Project Structure
 
 ```
 Portfolio/
-├── index.html                      # Main landing page with hero, projects, and skills
-├── contact.html                    # Contact form page
-├── portfolio-dapprentissage.html   # Learning portfolio/reflection page
-├── projet[1-4].html               # Individual project detail pages
+├── index.html                      # Landing page: hero, about, education, projects, skills, passions
+├── contact.html                    # Contact form page (mailto)
+├── portfolio-dapprentissage.html   # Learning portfolio / competency evidence (not linked in the navbar)
+├── projet1.html, projet3.html, projet4.html  # Project detail pages (there is no projet2.html)
 ├── css/
-│   ├── modern.css                 # Main modern stylesheet with all components
-│   ├── variables.css              # CSS custom properties (design tokens)
-│   ├── contact.css                # Contact page specific styles
-│   ├── project.css                # Project pages specific styles
-│   ├── portfolio-dapprentissage.css # Learning portfolio styles
-│   └── style.css                  # Legacy styles (older version)
+│   ├── variables.css               # Design tokens (imported by modern.css)
+│   ├── modern.css                  # Base, shared components, home page sections
+│   ├── project.css                 # Project pages
+│   ├── contact.css                 # Contact page
+│   └── portfolio-dapprentissage.css
 ├── js/
-│   └── main.js                    # All JavaScript functionality
-├── img/                           # Project screenshots and UI assets
-└── pdf/
-    └── cv.pdf                     # Resume document
+│   └── main.js                     # All JavaScript, shared by every page
+├── img/                            # Project screenshots
+└── pdf/cv.pdf
 ```
 
 ## Common Development Commands
 
-### Local Development
 ```bash
-# Python HTTP server
-python3 -m http.server 8000
-
-# PHP built-in server
-php -S localhost:8000
-
-# Or simply open index.html in a browser
+# Any static server works, e.g.
+npx serve -l 8000 .
+python -m http.server 8000
 ```
 
-No build process is required - this is a static site that can be served directly.
+Opening `index.html` directly also works, but page transitions and CDN scripts behave best over HTTP.
 
-## High-Level Architecture
+## Architecture
 
-### Design System (variables.css)
-The site uses CSS custom properties for consistent theming:
-- **Colors**: Primary/secondary palettes, text colors, backgrounds
-- **Spacing**: Scale from xs (0.25rem) to 2xl (3rem)
-- **Typography**: Font sizes and line heights
-- **Effects**: Shadows, transitions, border-radius values
-- **Z-index**: Layering scale for modals, navbar, etc.
+### Libraries (CDN, loaded before `js/main.js` on every page)
+- GSAP 3 + ScrollTrigger (cdnjs) — all scroll/entrance animations
+- Lenis (unpkg) — smooth scrolling
+- Font Awesome (cdnjs), Google Fonts (Space Grotesk, Inter, JetBrains Mono)
 
-### Component Architecture (modern.css)
-Key reusable components:
-- **Buttons**: `.btn`, `.btn-primary`, `.btn-secondary`
-- **Cards**: `.card`, `.project-card` with hover effects
-- **Sections**: `.hero`, `.section`, `.navbar`
-- **Animations**: `.fade-in-up`, `.fade-in` with Intersection Observer
-- **Forms**: Styled inputs with validation states
+`main.js` must keep working when these are missing: it adds `has-motion` or `no-motion` on `<html>`. `no-motion` (no GSAP, or `prefers-reduced-motion`) shows all content with no animation. Never hide content in CSS waiting for JS — initial hidden states are set by GSAP only.
 
-### JavaScript Features (main.js)
-- **Dark Mode**: Theme switching with localStorage persistence
-- **Mobile Navigation**: Hamburger menu with smooth animations
-- **Scroll Effects**: 
-  - Navbar hide/show on scroll
-  - Fade-in animations using Intersection Observer
-  - Smooth scroll for anchor links
-- **Typed Effect**: Animated typing in hero section
-- **Form Validation**: Client-side validation for contact form
-- **Loading Animation**: Displays while page loads
-- **Toast Notifications**: For user feedback
+### Design system (`variables.css`)
+Single dark theme (no light mode). Neon palette `--neon-blue`, `--neon-violet`, `--neon-cyan` (with `-rgb` variants for `rgba()`), glass surfaces `--surface`, `--border-color`, `--gradient-neon`, `--glow-*`. Legacy token names (`--primary-color`, `--bg-primary`, `--space-*`, `--radius-*`…) are kept and still used.
 
-### Page-Specific Notes
-- **index.html**: Features hero section with typed animation, project grid, skills section
-- **contact.html**: Contact form using mailto: method with client-side validation
-- **projet[1-4].html**: Project detail pages with consistent layout
-- **portfolio-dapprentissage.html**: Academic reflection page with timeline layout
+### JavaScript (`main.js`)
+One IIFE with an `init*` function per feature; each returns early when its elements are absent, since the script is shared by all pages.
+- `initSmoothScroll` — Lenis + anchor links (`a[href^="#"]`)
+- `initNav` — mobile menu, hide/show navbar on scroll, reading progress bar, active link scroll-spy
+- `initPageTransitions` / `playIntro` — veil between internal pages; counter loader on the first home visit of a session (`sessionStorage`)
+- `initHero`, `initRoles`, `initBackground` — letter-by-letter name, rotating typed roles (`data-roles`, `|`-separated), particle constellation canvas
+- `initScrollAnimations` — reveals, word-split titles, counters (`data-count`), timeline drawing, image parallax
+- `initMarquee`, `initCursor`, `initMagnetic`, `initTilt` — desktop-only pointer effects (`hover: hover` and `pointer: fine`)
+- `initPassions` — interactive SVGs (`data-passion="volley|basket|guitar"`)
+- `initContactForm` — validation, then opens a pre-filled `mailto:`
+- `initLearningPortfolio` — nav pills scroll-spy, back button
 
-### Responsive Design
-- Mobile-first approach with breakpoint at 768px
-- CSS Grid for project layouts
-- Flexbox for component layouts
-- Fluid typography using `clamp()`
+### Conventions
+- **Reveal on scroll**: add `data-reveal` (variants: `left`, `right`, `scale`) on home-page elements. Secondary pages are revealed automatically through the selector list `REVEAL_SELECTOR` in `main.js` — add new component classes there rather than editing each page.
+- **Custom cursor label**: `data-cursor="Texte"` on an element.
+- **Tilt cards**: listed in `TILT_SELECTOR`; their transforms are driven by GSAP, so avoid CSS `transform` on hover for them (use `scale`/`translate` individual properties or box-shadow).
+- `.btn` and `.social-link` are magnetic (GSAP `x`/`y`): don't add CSS hover transforms on them.
+- The navbar must not get `backdrop-filter` or a permanent `transform` directly (the full-screen mobile menu is `position: fixed` inside it); the blur lives on `.navbar::before`.
+- Contact email is `nicolaslyf@gmail.com` everywhere (also the `EMAIL` constant in `main.js`).
+- The footer year is injected by JS.
 
-### Performance Considerations
-- No external dependencies (except Font Awesome CDN)
-- Lazy loading animations with Intersection Observer
-- Debounced scroll events
-- CSS transforms for smooth animations
+### Responsive
+Main breakpoint at 768px (full-screen mobile menu), plus 900px/1024px layout breakpoints. Pointer effects are disabled on touch devices.
