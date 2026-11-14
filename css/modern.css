@@ -214,6 +214,26 @@ section[id], [id^="competence"] { scroll-margin-top: 90px; }
   font-size: var(--text-sm);
 }
 
+/* Sélecteur de langue FR / EN */
+.navbar-link.lang-switch {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  color: var(--neon-cyan);
+  padding: 0.3rem 0.65rem;
+  border: 1px solid rgba(var(--neon-cyan-rgb), 0.4);
+  border-radius: var(--radius-full);
+  transition: background var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-base);
+}
+
+.navbar-link.lang-switch::after { display: none; }
+
+.navbar-link.lang-switch:hover {
+  background: rgba(var(--neon-cyan-rgb), 0.14);
+  color: #fff;
+  box-shadow: 0 0 18px rgba(var(--neon-cyan-rgb), 0.3);
+}
+
 /* Menu mobile */
 .mobile-menu-toggle {
   display: none;

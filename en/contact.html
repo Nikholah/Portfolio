@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="alternate" hreflang="fr" href="../contact.html">
+    <title>Contact - Nicolas Lyfoung</title>
+    <meta name="description" content="Get in touch with Nicolas Lyfoung about your web development projects or any professional opportunity.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/modern.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <i class="fas fa-code"></i>
+                Nicolas L.
+            </a>
+            
+            <ul class="navbar-menu">
+                <li><a href="index.html#about" class="navbar-link">Work-study</a></li>
+                <li><a href="index.html#education" class="navbar-link">Education</a></li>
+                <li><a href="index.html#projects" class="navbar-link">Projects</a></li>
+                <li><a href="index.html#skills" class="navbar-link">Skills</a></li>
+                <li><a href="index.html#passions" class="navbar-link">Passions</a></li>
+                <li><a href="contact.html" class="navbar-link active">Contact</a></li>
+                <li><a href="../contact.html" class="navbar-link lang-switch" lang="fr" hreflang="fr" aria-label="Version française">FR</a></li>
+                <li>
+                    <a href="../pdf/cv.pdf" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-download"></i> CV
+                    </a>
+                </li>
+            </ul>
+            
+            <button class="mobile-menu-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h1 class="section-title animate-on-scroll">Get in touch</h1>
+            
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info animate-on-scroll">
+                    <h2>Let's talk about your project</h2>
+                    <p>
+                        I'm always interested in new projects and opportunities. Feel free to reach out to discuss your ideas or any collaboration.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <a href="mailto:nicolaslyf@gmail.com">nicolaslyf@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fab fa-linkedin"></i>
+                            <div>
+                                <h3>LinkedIn</h3>
+                                <a href="https://www.linkedin.com/in/nicolas-lyfoung/" target="_blank">nicolas-lyfoung</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <h3>GitHub</h3>
+                                <a href="https://github.com/Nikholah" target="_blank">@Nikholah</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Location</h3>
+                                <p>Montpellier, France</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper animate-on-scroll">
+                    <form id="contact-form" class="contact-form">
+                        <!-- L'input précède le label : nécessaire pour les labels flottants (CSS) -->
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder=" " autocomplete="name" required>
+                            <label for="name">Full name</label>
+                            <span class="error-message" id="name-error" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder=" " autocomplete="email" required>
+                            <label for="email">Email address</label>
+                            <span class="error-message" id="email-error" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder=" " required>
+                            <label for="subject">Subject</label>
+                            <span class="error-message" id="subject-error" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="6" placeholder=" " required></textarea>
+                            <label for="message">Message</label>
+                            <span class="error-message" id="message-error" role="alert"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            Send message
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <p class="form-note">The message opens in your email client, ready to send.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Nicolas Lyfoung. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://github.com/Nikholah" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nicolas-lyfoung/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:nicolaslyf@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

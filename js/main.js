@@ -15,6 +15,29 @@
     const EMAIL = 'nicolaslyf@gmail.com';
     const NAV_OFFSET = 80;
 
+    // Textes de l'interface générés en JS, selon la langue de la page (<html lang>)
+    const STRINGS = {
+        fr: {
+            menu: 'Ouvrir ou fermer le menu',
+            nameError: 'Le nom doit contenir au moins 2 caractères',
+            emailError: 'Veuillez entrer une adresse email valide',
+            subjectError: 'Le sujet doit contenir au moins 3 caractères',
+            messageError: 'Le message doit contenir au moins 10 caractères',
+            formInvalid: 'Merci de corriger les champs indiqués.',
+            formSent: 'Votre messagerie s\'ouvre avec le message pré-rempli : il ne reste plus qu\'à l\'envoyer.'
+        },
+        en: {
+            menu: 'Open or close the menu',
+            nameError: 'Name must be at least 2 characters long',
+            emailError: 'Please enter a valid email address',
+            subjectError: 'Subject must be at least 3 characters long',
+            messageError: 'Message must be at least 10 characters long',
+            formInvalid: 'Please fix the highlighted fields.',
+            formSent: 'Your email client is opening with the message pre-filled: just hit send.'
+        }
+    };
+    const T = STRINGS[(root.lang || 'fr').toLowerCase().startsWith('en') ? 'en' : 'fr'];
+
     let lenis = null;
 
     const $ = (selector, context = document) => context.querySelector(selector);
@@ -86,7 +109,7 @@
         };
 
         if (toggle && menu && burger) {
-            toggle.setAttribute('aria-label', 'Ouvrir ou fermer le menu');
+            toggle.setAttribute('aria-label', T.menu);
             toggle.setAttribute('aria-expanded', 'false');
             toggle.addEventListener('click', () => setOpen(!menu.classList.contains('active')));
             $$('a', menu).forEach((link) => link.addEventListener('click', () => setOpen(false)));
@@ -901,10 +924,10 @@
         form.setAttribute('novalidate', '');
 
         const rules = {
-            name: (value) => value.trim().length >= 2 || 'Le nom doit contenir au moins 2 caractères',
-            email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) || 'Veuillez entrer une adresse email valide',
-            subject: (value) => value.trim().length >= 3 || 'Le sujet doit contenir au moins 3 caractères',
-            message: (value) => value.trim().length >= 10 || 'Le message doit contenir au moins 10 caractères'
+            name: (value) => value.trim().length >= 2 || T.nameError,
+            email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) || T.emailError,
+            subject: (value) => value.trim().length >= 3 || T.subjectError,
+            message: (value) => value.trim().length >= 10 || T.messageError
         };
         const fields = Object.keys(rules).filter((name) => form.elements[name]);
 
@@ -933,7 +956,7 @@
             const invalid = fields.filter((name) => !check(name));
             if (invalid.length) {
                 form.elements[invalid[0]].focus();
-                showNotification('Merci de corriger les champs indiqués.', 'error');
+                showNotification(T.formInvalid, 'error');
                 return;
             }
 
@@ -941,7 +964,7 @@
             const body = `${value('message')}\n\n— ${value('name')} (${value('email')})`;
             window.location.href =
                 `mailto:${EMAIL}?subject=${encodeURIComponent(value('subject'))}&body=${encodeURIComponent(body)}`;
-            showNotification('Votre messagerie s\'ouvre avec le message pré-rempli : il ne reste plus qu\'à l\'envoyer.', 'success');
+            showNotification(T.formSent, 'success');
         });
     }
 

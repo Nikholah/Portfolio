@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="alternate" hreflang="fr" href="../projet1.html">
+    <title>Docker Infrastructure - Nicolas Lyfoung</title>
+    <meta name="description" content="A project about containerising and orchestrating applications with Docker and Docker Compose.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/modern.css">
+    <link rel="stylesheet" href="../css/project.css">
+
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <a href="index.html" class="navbar-brand">
+            <i class="fas fa-code"></i>
+            Nicolas L.
+        </a>
+
+        <ul class="navbar-menu">
+            <li><a href="index.html#about" class="navbar-link">Work-study</a></li>
+            <li><a href="index.html#education" class="navbar-link">Education</a></li>
+            <li><a href="index.html#projects" class="navbar-link">Projects</a></li>
+            <li><a href="index.html#skills" class="navbar-link">Skills</a></li>
+            <li><a href="index.html#passions" class="navbar-link">Passions</a></li>
+            <li><a href="contact.html" class="navbar-link">Contact</a></li>
+            <li><a href="../projet1.html" class="navbar-link lang-switch" lang="fr" hreflang="fr" aria-label="Version française">FR</a></li>
+            <li>
+                <a href="../pdf/cv.pdf" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-download"></i> CV
+                </a>
+            </li>
+        </ul>
+
+        <button class="mobile-menu-toggle">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+    </div>
+</nav>
+
+<!-- Project Hero -->
+<section class="project-hero">
+    <div class="container">
+        <div class="project-hero-content animate-on-scroll">
+            <a href="index.html#projects" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to projects
+            </a>
+
+            <h1 class="project-hero-title">Docker Infrastructure</h1>
+
+            <div class="project-meta">
+                    <span class="project-date">
+                        <i class="far fa-calendar"></i> 2025 - 2026
+                    </span>
+                <span class="project-type">
+                        <i class="fas fa-server"></i> DevOps & Infrastructure
+                    </span>
+                <span class="project-duration">
+                        <i class="far fa-clock"></i> Ongoing
+                    </span>
+            </div>
+
+            <p class="project-intro">
+                Setting up a complete Docker containerisation infrastructure to orchestrate multi-service applications. This project automated deployment and made environments portable from development to production.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Project Content -->
+<section class="project-content-section">
+    <div class="container">
+        <div class="project-layout">
+            <!-- Main Content -->
+            <div class="project-main animate-on-scroll">
+                <!-- Gallery -->
+                <div class="project-gallery">
+                    <img src="../img/projet3.png" alt="Docker architecture" class="project-screenshot">
+                </div>
+
+                <!-- Description -->
+                <div class="project-section">
+                    <h2>Overview</h2>
+                    <p>
+                        This project consisted of building a complete Docker infrastructure to orchestrate several interconnected services. The goal was to containerise a full-stack web application along with its database, web server and auxiliary services.
+                    </p>
+                    <p>
+                        Development focused on three main aspects: writing optimised Dockerfiles for each service, setting up orchestration with Docker Compose, and applying security and performance best practices.
+                    </p>
+                </div>
+
+                <!-- Features -->
+                <div class="project-section">
+                    <h2>Key features</h2>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Multi-container architecture with Docker Compose
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Optimised Docker images using multi-stage builds
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Volume management for data persistence
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Isolated Docker network for security
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Environment variables for configuration
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Healthchecks and automatic service restarts
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Technical Details -->
+                <div class="project-section">
+                    <h2>Technical challenges</h2>
+                    <p>
+                        The main challenge was to reduce the size of the Docker images while keeping every required feature. I used multi-stage build techniques and chose minimal base images (Alpine Linux) to shrink the footprint.
+                    </p>
+                    <p>
+                        Orchestrating the services and their dependencies required particular care to guarantee a correct start-up order and smooth communication between containers.
+                    </p>
+                </div>
+
+                <!-- Competencies -->
+                <div class="project-section">
+                    <h2>Skills developed</h2>
+
+                    <div class="competency-grid">
+                        <div class="competency-card">
+                            <h3><i class="fas fa-code"></i> Building an application</h3>
+                            <ul>
+                                <li>Writing optimised Dockerfiles</li>
+                                <li>Automation scripts in Bash</li>
+                                <li>Service configuration with YAML</li>
+                            </ul>
+                        </div>
+
+                        <div class="competency-card">
+                            <h3><i class="fas fa-tachometer-alt"></i> Optimising applications</h3>
+                            <ul>
+                                <li>Multi-stage builds for lightweight images</li>
+                                <li>Efficient layer caching</li>
+                                <li>Start-up time optimisation</li>
+                            </ul>
+                        </div>
+
+                        <div class="competency-card">
+                            <h3><i class="fas fa-database"></i> Managing data</h3>
+                            <ul>
+                                <li>Docker volumes for persistence</li>
+                                <li>Container backup and restore</li>
+                                <li>Managing containerised databases</li>
+                            </ul>
+                        </div>
+
+                        <div class="competency-card">
+                            <h3><i class="fas fa-project-diagram"></i> Leading a project</h3>
+                            <ul>
+                                <li>Complete documentation with a README</li>
+                                <li>Version control with Git and GitFlow</li>
+                                <li>CI/CD with GitHub Actions</li>
+                            </ul>
+                        </div>
+
+                        <div class="competency-card">
+                            <h3><i class="fas fa-shield-alt"></i> System administration</h3>
+                            <ul>
+                                <li>Container hardening</li>
+                                <li>Docker network management</li>
+                                <li>Centralised monitoring and logging</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="project-sidebar animate-on-scroll">
+                <!-- Tech Stack -->
+                <div class="sidebar-section">
+                    <h3>Technologies used</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">Docker Compose</span>
+                        <span class="tech-badge">Linux Alpine</span>
+                        <span class="tech-badge">Nginx</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">Git</span>
+                    </div>
+                </div>
+
+
+                <!-- Team -->
+                <div class="sidebar-section">
+                    <h3>Context</h3>
+                    <p class="team-info">
+                        A personal project carried out as part of a DevOps course to improve my containerisation skills.
+                    </p>
+                </div>
+
+                <!-- Key Learnings -->
+                <div class="sidebar-section">
+                    <h3>Key takeaways</h3>
+                    <ul class="key-points">
+                        <li>Microservices architecture</li>
+                        <li>Optimised and secure images</li>
+                        <li>Automated orchestration</li>
+                        <li>Reproducible environments</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<!-- Navigation Projects -->
+<section class="project-navigation">
+    <div class="container">
+        <div class="nav-projects">
+            <a href="projet3.html" class="nav-project next">
+                <span class="nav-label">Next project</span>
+                <span class="nav-title">Flory Animation Showcase Website <i class="fas fa-arrow-right"></i></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; 2024 Nicolas Lyfoung. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/Nikholah" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/nicolas-lyfoung/" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:nicolaslyf@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>
